@@ -173,6 +173,12 @@
   }
 
   function mount() {
+    if (!document.getElementById('ds-locale-fit')) {
+      var fit = document.createElement('style');
+      fit.id = 'ds-locale-fit';
+      fit.textContent = '@media(max-width:720px){.main-nav a.nav-cta{display:none}.bar{gap:6px}.frame-right{gap:4px}.frame-btn{padding:8px 6px;letter-spacing:.03em}}';
+      document.head.appendChild(fit);
+    }
     var right = document.querySelector('.frame-right');
     if (right && !document.getElementById('lang-toggle')) {
       var button = document.createElement('button');
