@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Digital Signage AI — 20 connected solutions for spaces that respond</title>
+<title>Digital Signage AI — six live products for spaces that respond</title>
 <meta name="description" content="One platform, twenty connected solutions to create, run and measure digital experiences in stores, offices, events and public spaces. Digital signage, video analytics, IoT, AR/VR and digital twins — under your own brand.">
 <link rel="canonical" href="https://www.digitalsignage.ai/">
 <meta name="robots" content="index,follow,max-image-preview:large">
@@ -53,10 +53,98 @@ header{position:sticky;top:0;z-index:20;backdrop-filter:blur(14px);background:rg
 .brand-symbol{display:block;width:28px;height:28px;flex:none}
 .brand-symbol[hidden]{display:none}
 .logo em{font-style:normal;color:var(--amber)}
-.main-nav{margin-left:auto;display:flex;gap:20px;font-size:14px}
+.main-nav{margin-left:auto;display:flex;align-items:center;gap:20px;font-size:14px}
 .main-nav a{color:var(--muted);text-decoration:none;transition:color .2s}
 .main-nav a:hover{color:var(--text)}
-@media(max-width:760px){.main-nav a.opt{display:none}}
+.main-nav a.nav-cta{color:#190d09;background:var(--amber);padding:7px 13px;border-radius:3px;font-weight:600}
+.main-nav a.nav-cta:hover{color:#190d09;background:#ff7453}
+@media(max-width:980px){.main-nav a.opt{display:none}}
+@media(max-width:700px){.main-nav a:not(.nav-cta){display:none}}
+
+/* ── frame: Options (left) · Advanced (right) · Expert (bottom) ── */
+.bar{gap:16px}
+.frame-btn{font:600 11px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);background:transparent;border:1px solid var(--border);border-radius:3px;padding:9px 11px;cursor:pointer;white-space:nowrap;transition:color .15s,border-color .15s,background .15s}
+.frame-btn:hover{color:var(--text);border-color:rgba(243,240,232,.4)}
+.frame-btn[aria-expanded="true"]{color:#190d09;background:var(--amber);border-color:transparent}
+.frame-btn span{font-size:13px;margin-right:3px}
+.frame-right{display:flex;gap:8px}
+@media(max-width:520px){.logo span{display:none}.frame-btn{padding:9px 8px;letter-spacing:.06em}.bar{gap:9px}.wrap.bar{padding-left:14px;padding-right:14px}}
+.panel-scrim{position:fixed;inset:62px 0 0;z-index:28;background:rgba(5,10,10,.55)}
+.panel-scrim[hidden]{display:none}
+.panel{position:fixed;z-index:30;background:#0e1c1a;border:1px solid var(--border);overflow:auto;overscroll-behavior:contain;box-shadow:0 24px 60px rgba(0,0,0,.45)}
+.panel[hidden]{display:none}
+.panel-left{top:62px;left:0;bottom:0;width:min(340px,88vw);border-left:0;border-top:0;padding:8px 22px 28px}
+.panel-right{top:62px;right:0;bottom:0;width:min(380px,90vw);border-right:0;border-top:0;padding:8px 22px 28px}
+.panel-bottom{left:0;right:0;bottom:0;max-height:62vh;border-width:1px 0 0;border-top-color:var(--border-strong);padding:8px 32px 26px}
+.panel-head{display:flex;align-items:center;gap:14px;position:sticky;top:-8px;background:#0e1c1a;padding:14px 0 12px;margin-bottom:8px;border-bottom:1px solid var(--border)}
+.panel-head h2{font:600 11px/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--amber);margin:0;max-width:none}
+.panel-close{margin-left:auto;background:transparent;border:0;color:var(--muted);font-size:22px;line-height:1;cursor:pointer;padding:2px 6px}
+.panel-close:hover{color:var(--text)}
+.panel-live{font:10px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--dim)}
+.panel-label{font:10px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--dim);margin:22px 0 8px}
+.panel-intro{color:var(--muted);font-size:13.5px;margin:12px 0 14px}
+.panel-nav{display:grid}
+.panel-nav a{display:grid;grid-template-columns:30px 1fr;gap:8px;padding:11px 0;border-bottom:1px solid var(--border);color:var(--text);text-decoration:none;font-size:14.5px}
+.panel-nav a span{font:10px var(--mono);letter-spacing:.1em;color:var(--amber);padding-top:5px}
+.panel-nav a:hover{color:var(--amber)}
+.panel-cards{display:grid;gap:8px}
+.panel-cards a{display:grid;gap:3px;padding:13px 14px;border:1px solid var(--border);text-decoration:none;transition:border-color .15s,background .15s}
+.panel-cards a:hover{border-color:var(--amber);background:rgba(255,92,53,.06)}
+.panel-cards b{font:500 1.05rem/1.2 var(--serif)}
+.panel-cards span{color:var(--muted);font-size:12.5px;line-height:1.45}
+.expert-grid{display:grid;grid-template-columns:1fr .8fr 1.5fr;gap:34px}
+@media(max-width:860px){.expert-grid{grid-template-columns:1fr;gap:4px}.panel-bottom{padding:8px 22px 24px}}
+.expert-ledger{margin:0}
+.expert-ledger div{display:grid;grid-template-columns:170px 1fr;gap:12px;padding:7px 0;border-bottom:1px solid var(--border)}
+.expert-ledger dt{font:10px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--dim)}
+.expert-ledger dd{margin:0;font:12px var(--mono);overflow-wrap:anywhere}
+.expert-links{display:grid;gap:7px;font:12px var(--mono)}
+.expert-links a,.expert-endpoints a{color:var(--cyan);text-decoration:none}
+.expert-links a:hover,.expert-endpoints a:hover{color:var(--text)}
+.expert-endpoints{list-style:none;margin:0;padding:0;font:12px var(--mono)}
+.expert-endpoints li{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:6px 0;border-bottom:1px solid var(--border)}
+.expert-endpoints b{font-weight:500;color:var(--muted)}
+
+/* ── launchpad: one card per product ── */
+.pad{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+@media(max-width:1020px){.pad{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:640px){.pad{grid-template-columns:1fr}}
+.prod{display:flex;flex-direction:column;background:var(--elev);border:1px solid var(--border);transition:border-color .2s,transform .2s,box-shadow .2s;scroll-margin-top:86px}
+.prod:hover,.prod:focus-within{border-color:var(--amber);transform:translateY(-3px);box-shadow:9px 9px 0 rgba(255,92,53,.10)}
+.prod-shot{position:relative;display:block;aspect-ratio:16/10;overflow:hidden;background:#07100f;border-bottom:1px solid var(--border)}
+.prod-shot img{display:block;width:100%;height:100%;object-fit:cover;object-position:top center;filter:saturate(.92);transition:transform .5s ease,filter .3s}
+.prod:hover .prod-shot img{transform:scale(1.035);filter:none}
+.prod-verb{position:absolute;left:0;top:0;background:var(--amber);color:#190d09;font:600 10px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;padding:7px 10px}
+.prod-live{position:absolute;right:10px;bottom:10px;display:inline-flex;align-items:center;gap:7px;background:rgba(11,23,22,.86);color:var(--text);font:10px var(--mono);letter-spacing:.08em;padding:5px 8px}
+.prod-live::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--cyan)}
+.prod-body{display:flex;flex-direction:column;flex:1;padding:20px 22px 22px}
+.prod-no{font:10px var(--mono);letter-spacing:.14em;color:var(--dim);margin:0 0 9px}
+.prod h3{margin:0 0 9px;font:500 1.75rem/1.05 var(--serif);letter-spacing:-.025em}
+.prod h3 small{font:10.5px var(--mono);letter-spacing:.06em;color:var(--dim);margin-left:8px;white-space:nowrap}
+.prod p{margin:0 0 18px;color:var(--muted);font-size:14px;line-height:1.6}
+.prod-links{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;margin-top:auto;padding-top:14px;border-top:1px solid var(--border)}
+.prod-demo{display:inline-flex;align-items:center;gap:7px;background:var(--text);color:var(--bg);text-decoration:none;font:600 11px/1 var(--mono);letter-spacing:.09em;text-transform:uppercase;padding:10px 13px}
+.prod-demo:hover{background:var(--amber)}
+.prod-site{color:var(--cyan);text-decoration:none;font:11px var(--mono);letter-spacing:.04em;border-bottom:1px solid rgba(185,255,102,.32)}
+.prod-site:hover{color:var(--text);border-color:var(--text)}
+.pad-foot{display:flex;flex-wrap:wrap;gap:18px 28px;align-items:center;justify-content:space-between;margin-top:40px;padding-top:26px;border-top:1px solid var(--border-strong)}
+.pad-foot p{margin:0;max-width:60ch;color:var(--muted);font-size:15px}
+
+/* ── field cases ── */
+.cases{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:26px}
+@media(max-width:860px){.cases{grid-template-columns:1fr}}
+.case{display:flex;flex-direction:column;border-top:1px solid var(--border-strong)}
+.case-shot{display:block;aspect-ratio:16/9;overflow:hidden;background:#07100f;margin-top:22px;border:1px solid var(--border)}
+.case-shot img{display:block;width:100%;height:100%;object-fit:cover;object-position:top center}
+.case-kicker{margin:18px 0 10px;font:10.5px var(--mono);letter-spacing:.13em;text-transform:uppercase;color:var(--dim)}
+.case-kicker span{color:var(--amber);margin-right:10px}
+.case h3{margin:0 0 12px;font:500 clamp(1.7rem,3vw,2.4rem)/1.03 var(--serif);letter-spacing:-.03em}
+.case p{margin:0 0 16px;color:var(--muted);font-size:14.5px;line-height:1.65;max-width:54ch}
+.case-facts{list-style:none;margin:0 0 20px;padding:0;border-top:1px solid var(--border)}
+.case-facts li{display:grid;grid-template-columns:110px 1fr;gap:12px;padding:9px 0;border-bottom:1px solid var(--border);font-size:13px;color:var(--text)}
+.case-facts b{font:10px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--dim);font-weight:400;padding-top:3px}
+.case-status{display:inline-block;margin:0 0 4px;font:10px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--cyan)}
+.case .role-next{align-self:flex-start;margin-top:auto}
 
 .hero{padding:64px 24px 60px;display:grid;grid-template-columns:minmax(0,1fr) minmax(360px,.92fr);gap:64px;align-items:center;min-height:650px}
 .hero-copy{padding:24px 0}
@@ -210,33 +298,99 @@ footer a:hover{color:var(--text)}
 
 <header>
   <div class="wrap bar">
+    <button class="frame-btn frame-btn-left" type="button" data-panel="options" aria-controls="panel-options" aria-expanded="false"><span aria-hidden="true">☰</span> Options</button>
     <a class="logo" href="/">
       <img class="brand-symbol" data-brand-mark src="/assets/brand-mark.svg" width="150" height="150" alt="">
       <span data-brand-wordmark>digitalsignage<em>.ai</em></span>
     </a>
     <nav class="main-nav" aria-label="Primary navigation">
-      <a href="#roles">Roles</a>
-      <a href="#solution-map" aria-label="Solution map">Map</a>
-      <a class="opt" href="#proof">Proof</a>
+      <a href="#launchpad">Products</a>
+      <a href="#cases">Cases</a>
+      <a class="opt" href="#solution-map" aria-label="Solution map">Twenty solutions</a>
       <a class="opt" href="#whitelabel">White label</a>
-      <a href="/help/">Help</a>
-      <a class="opt" href="/mcp/">MCP</a>
+      <a class="nav-cta" href="/pilot/">Start a pilot</a>
     </nav>
+    <div class="frame-right">
+      <button class="frame-btn" type="button" data-panel="advanced" aria-controls="panel-advanced" aria-expanded="false">Advanced</button>
+      <button class="frame-btn" type="button" data-panel="expert" aria-controls="panel-expert" aria-expanded="false">Expert</button>
+    </div>
   </div>
 </header>
+
+<div class="panel-scrim" data-panel-close hidden></div>
+
+<aside class="panel panel-left" id="panel-options" aria-labelledby="panel-options-title" hidden>
+  <div class="panel-head"><h2 id="panel-options-title">Options</h2><button class="panel-close" type="button" data-panel-close aria-label="Close options">×</button></div>
+  <nav class="panel-nav" aria-label="Page sections">
+    <a href="#launchpad"><span>01</span>Six products, one launchpad</a>
+    <a href="#cases"><span>02</span>Field cases</a>
+    <a href="#roles"><span>03</span>Start from your role</a>
+    <a href="#blueprint"><span>04</span>Network blueprint</a>
+    <a href="#solutions"><span>05</span>Twenty solutions</a>
+    <a href="#proof"><span>06</span>Live proof desk</a>
+    <a href="#whitelabel"><span>07</span>White label</a>
+  </nav>
+  <p class="panel-label">Go further</p>
+  <nav class="panel-nav" aria-label="Other pages">
+    <a href="/pilot/"><span>→</span>Start a pilot</a>
+    <a href="/help/"><span>→</span>Help for humans</a>
+    <a href="https://www.admira.tv"><span>ES</span>Edición en español</a>
+  </nav>
+</aside>
+
+<aside class="panel panel-right" id="panel-advanced" aria-labelledby="panel-advanced-title" hidden>
+  <div class="panel-head"><h2 id="panel-advanced-title">Advanced</h2><button class="panel-close" type="button" data-panel-close aria-label="Close advanced">×</button></div>
+  <p class="panel-intro">For the people who have to integrate, audit or operate it.</p>
+  <nav class="panel-cards" aria-label="Advanced resources">
+    <a href="/mcp/"><b>MCP door</b><span>The agent-facing entry: manifest and llms.txt.</span></a>
+    <a href="/trust/"><b>Trust ledger</b><span>Source-backed architecture claims, one by one.</span></a>
+    <a href="/atlas/"><b>Field atlas</b><span>Patterns for stores, workplaces and venues.</span></a>
+    <a href="/states/?state=empty"><b>System states</b><span>What empty, loading and failed look like.</span></a>
+    <a href="/motion/"><b>Signal rhythm</b><span>The motion language, with reduced-motion rules.</span></a>
+    <a href="#blueprint" data-panel-close><b>Network blueprint</b><span>Turn a site conversation into a working brief.</span></a>
+  </nav>
+</aside>
+
+<aside class="panel panel-bottom" id="panel-expert" aria-labelledby="panel-expert-title" hidden>
+  <div class="panel-head"><h2 id="panel-expert-title">Expert</h2><span class="panel-live" id="expert-status">Idle</span><button class="panel-close" type="button" data-panel-close aria-label="Close expert">×</button></div>
+  <div class="expert-grid">
+    <div>
+      <p class="panel-label">This document</p>
+      <dl class="expert-ledger">
+        <div><dt>Release</dt><dd id="expert-release">—</dd></div>
+        <div><dt>Brand runtime</dt><dd id="expert-brand">—</dd></div>
+        <div><dt>Products on the launchpad</dt><dd id="expert-products">—</dd></div>
+        <div><dt>Catalogue entries</dt><dd id="expert-catalogue">—</dd></div>
+      </dl>
+    </div>
+    <div>
+      <p class="panel-label">Raw sources</p>
+      <nav class="expert-links" aria-label="Raw sources">
+        <a href="/data-solutions.json">data-solutions.json ↗</a>
+        <a href="/mcp/manifest.json">mcp/manifest.json ↗</a>
+        <a href="/mcp/llms.txt">mcp/llms.txt ↗</a>
+        <a href="/sitemap.xml">sitemap.xml ↗</a>
+      </nav>
+    </div>
+    <div>
+      <p class="panel-label">Product endpoints, read from the cards</p>
+      <ul class="expert-endpoints" id="expert-endpoints"></ul>
+    </div>
+  </div>
+</aside>
 
 <main id="main-content" tabindex="-1">
 <div class="wrap hero">
   <div class="hero-copy">
-    <p class="eyebrow">Open Signal · twenty connected solutions</p>
+    <p class="eyebrow">Open Signal · six products, one launchpad</p>
     <h1 id="hero-title">Spaces that <span class="g">respond</span>.</h1>
-    <p class="lede">Twenty connected solutions to create, run and measure digital experiences in stores, offices, events and public spaces. Screens are only the first one. And every one of them can carry your brand instead of ours.</p>
+    <p class="lede">Six products you can open right now: create the content, run the screens, sell the airtime, twin the space, keep it working and see who did what. Start with one. Each of them can carry your brand instead of ours.</p>
     <div class="cta">
-      <a class="btn btn-primary" href="#roles">Start with your role →</a>
-      <a class="btn btn-ghost" href="#solutions">Browse twenty solutions</a>
+      <a class="btn btn-primary" href="/pilot/">Start a pilot →</a>
+      <a class="btn btn-ghost" href="#launchpad">Open the six products</a>
     </div>
-    <p class="hero-sequence" aria-label="From content to measurable proof">
-      <span>Content</span><span>Display</span><span>Response</span><span>Proof</span>
+    <p class="hero-sequence" aria-label="From creation to upkeep">
+      <span>Create</span><span>Run</span><span>Sell</span><span>Twin</span><span>Maintain</span><span>Coordinate</span>
     </p>
   </div>
   <figure class="hero-art" aria-labelledby="hero-figure-caption">
@@ -244,6 +398,118 @@ footer a:hover{color:var(--text)}
     <figcaption id="hero-figure-caption">Open Signal field study 01 · a physical space in one observable line</figcaption>
   </figure>
 </div>
+
+<section id="launchpad" aria-labelledby="launchpad-title">
+  <div class="wrap">
+    <header class="section-head">
+      <p class="section-folio"><b>06</b>Launchpad · live products</p>
+      <div class="section-heading">
+        <h2 id="launchpad-title">Open the product, not the <em>brochure</em>.</h2>
+        <p class="sub">Every card opens the product itself, on its own domain, as it runs today. Where a product needs an account, the card says so.</p>
+      </div>
+    </header>
+    <div class="pad">
+      <article class="prod" id="product-pixeria" data-product="Pixeria">
+        <a class="prod-shot" href="/pilot/" tabindex="-1" aria-hidden="true"><img src="/assets/launchpad/pixeria.jpg" width="960" height="600" loading="lazy" decoding="async" alt=""><span class="prod-verb">Create</span><span class="prod-live">Sign-in required</span></a>
+        <div class="prod-body">
+          <p class="prod-no">01 · pixeria.com</p>
+          <h3>Pixeria</h3>
+          <p>Generative content made for screens: images, video and audio announcements, produced and sent straight to the network that will play them.</p>
+          <div class="prod-links"><a class="prod-demo" href="/pilot/">Ask for access →</a><a class="prod-site" href="https://www.pixeria.com/" rel="noopener">pixeria.com ↗</a></div>
+        </div>
+      </article>
+      <article class="prod" id="product-admira-tv" data-product="admira.tv">
+        <a class="prod-shot" href="https://admira.tv/" rel="noopener" tabindex="-1" aria-hidden="true"><img src="/assets/launchpad/admira-tv.jpg" width="960" height="600" loading="lazy" decoding="async" alt=""><span class="prod-verb">Run</span><span class="prod-live">Open site · Spanish</span></a>
+        <div class="prod-body">
+          <p class="prod-no">02 · admira.tv</p>
+          <h3>admira.tv</h3>
+          <p>The channel engine. Playlists, players and per-screen settings for one display or a whole circuit, with a record of what each device played.</p>
+          <div class="prod-links"><a class="prod-demo" href="https://admira.tv/" rel="noopener">Open admira.tv ↗</a><a class="prod-site" href="https://admira.tv/canal" rel="noopener">Live channel · sign-in ↗</a></div>
+        </div>
+      </article>
+      <article class="prod" id="product-admira-app" data-product="admira.app">
+        <a class="prod-shot" href="https://admira.app/?lang=en" rel="noopener" tabindex="-1" aria-hidden="true"><img src="/assets/launchpad/admira-app.jpg" width="960" height="600" loading="lazy" decoding="async" alt=""><span class="prod-verb">Sell</span><span class="prod-live">Open demo</span></a>
+        <div class="prod-body">
+          <p class="prod-no">03 · admira.app</p>
+          <h3>admira.app</h3>
+          <p>Retail media on a map. Search a store, open its profile, see its screens and plan a campaign across the surfaces you pick.</p>
+          <div class="prod-links"><a class="prod-demo" href="https://admira.app/?lang=en" rel="noopener">Open the map ↗</a><a class="prod-site" href="https://clearchannel.tv/" rel="noopener">clearchannel.tv edition ↗</a></div>
+        </div>
+      </article>
+      <article class="prod" id="product-xpaceos" data-product="XpaceOS">
+        <a class="prod-shot" href="https://www.xpaceos.com/admira-xp/?autostart=xtanco" rel="noopener" tabindex="-1" aria-hidden="true"><img src="/assets/launchpad/xpaceos.jpg" width="960" height="600" loading="lazy" decoding="async" alt=""><span class="prod-verb">Twin</span><span class="prod-live">Open demo</span></a>
+        <div class="prod-body">
+          <p class="prod-no">04 · xpaceos.com</p>
+          <h3>XpaceOS</h3>
+          <p>A digital twin you can walk through. Screens, background music, scent and wifi of a retail space, supervised from one place.</p>
+          <div class="prod-links"><a class="prod-demo" href="https://www.xpaceos.com/admira-xp/?autostart=xtanco" rel="noopener">Enter the twin ↗</a><a class="prod-site" href="https://www.xpaceos.com/" rel="noopener">xpaceos.com ↗</a></div>
+        </div>
+      </article>
+      <article class="prod" id="product-yokup" data-product="Yokup">
+        <a class="prod-shot" href="https://www.yokup.com/incidencias" rel="noopener" tabindex="-1" aria-hidden="true"><img src="/assets/launchpad/yokup.jpg" width="960" height="600" loading="lazy" decoding="async" alt=""><span class="prod-verb">Maintain</span><span class="prod-live">Open demo · Spanish</span></a>
+        <div class="prod-body">
+          <p class="prod-no">05 · yokup.com</p>
+          <h3>Yokup</h3>
+          <p>Where shops and installers meet to look after connected equipment. Every fault in one list, diagnosed and assigned to someone who can fix it.</p>
+          <div class="prod-links"><a class="prod-demo" href="https://www.yokup.com/incidencias" rel="noopener">Open the incident desk ↗</a><a class="prod-site" href="https://www.yokup.com/" rel="noopener">yokup.com ↗</a></div>
+        </div>
+      </article>
+      <article class="prod" id="product-admira-live" data-product="admira.live">
+        <a class="prod-shot" href="https://www.admira.live/" rel="noopener" tabindex="-1" aria-hidden="true"><img src="/assets/launchpad/admira-live.jpg" width="960" height="600" loading="lazy" decoding="async" alt=""><span class="prod-verb">Coordinate</span><span class="prod-live">Open demo · Spanish</span></a>
+        <div class="prod-body">
+          <p class="prod-no">06 · admira.live</p>
+          <h3>admira.live</h3>
+          <p>The team of AI agents behind the work, in the open: a council you can question and a scoreboard of who did what today.</p>
+          <div class="prod-links"><a class="prod-demo" href="https://www.admira.live/" rel="noopener">Meet the council ↗</a><a class="prod-site" href="https://www.admira.live/highscore" rel="noopener">Scoreboard ↗</a></div>
+        </div>
+      </article>
+    </div>
+    <div class="pad-foot">
+      <p>Not sure which one comes first? Describe the place and the moment you want to change. Five short answers, no budget question.</p>
+      <a class="btn btn-primary" href="/pilot/">Write a pilot brief →</a>
+    </div>
+  </div>
+</section>
+
+<section id="cases" aria-labelledby="cases-title">
+  <div class="wrap">
+    <header class="section-head">
+      <p class="section-folio"><b>02</b>Field cases · open to inspect</p>
+      <div class="section-heading">
+        <h2 id="cases-title">Two spaces you can walk <em>into</em>.</h2>
+        <p class="sub">Both are demonstrations, and both say so. Neither is presented as a customer deployment: no physical players are assigned and no audience figure is claimed.</p>
+      </div>
+    </header>
+    <div class="cases">
+      <article class="case" id="case-coffee-twin">
+        <a class="case-shot" href="https://admira.app/?locationId=alsea-sbux-021&amp;lang=en" rel="noopener" tabindex="-1" aria-hidden="true"><img src="/assets/launchpad/case-twin.jpg" width="960" height="600" loading="lazy" decoding="async" alt=""></a>
+        <p class="case-kicker"><span>01</span>Barcelona · Passeig de Gràcia 103</p>
+        <p class="case-status">Concept demo · built from public data</p>
+        <h3>A coffee shop, rebuilt as a twin.</h3>
+        <p>The Starbucks at Passeig de Gràcia 103, operated in Spain by Alsea, modelled from a 360° capture and public information. Six wall screens and the till displays run playlists and background music inside the twin. Unplug a screen there and a real incident opens in Yokup.</p>
+        <ul class="case-facts">
+          <li><b>Shows</b>Twin, playlists, music and incident handling working together</li>
+          <li><b>Products</b>XpaceOS · admira.app · admira.tv · Yokup</li>
+          <li><b>Not claimed</b>A commercial relationship with Starbucks or Alsea, or playback on their hardware</li>
+        </ul>
+        <a class="role-next" href="https://admira.app/?locationId=alsea-sbux-021&amp;lang=en" rel="noopener">Open the store profile ↗</a>
+      </article>
+      <article class="case" id="case-cafebreria">
+        <a class="case-shot" href="https://www.xpaceos.com/xpacios/cafebreria/" rel="noopener" tabindex="-1" aria-hidden="true"><img src="/assets/launchpad/case-cafebreria.jpg" width="960" height="600" loading="lazy" decoding="async" alt=""></a>
+        <p class="case-kicker"><span>02</span>Cafebrería · prototype</p>
+        <p class="case-status">Prototype · no physical venue</p>
+        <h3>A café-bookshop where the shelf sells.</h3>
+        <p>A fictional café-bookshop built to test one idea: every object in the room can be a surface. Six books and six records on the shelf are interactive and link out to where they can be bought or played, and an operations layer tracks nineteen items in the room.</p>
+        <ul class="case-facts">
+          <li><b>Shows</b>Interactive objects, a 3D room and an operations view in one model</li>
+          <li><b>Products</b>XpaceOS · admira.app · Pixeria</li>
+          <li><b>Not claimed</b>A real venue, assigned devices or live telemetry; item states are simulated</li>
+        </ul>
+        <a class="role-next" href="https://www.xpaceos.com/xpacios/cafebreria/" rel="noopener">Enter the Cafebrería ↗</a>
+      </article>
+    </div>
+  </div>
+</section>
 
 <section id="roles" aria-labelledby="roles-title">
   <div class="wrap">
@@ -515,7 +781,7 @@ footer a:hover{color:var(--text)}
     <a href="/pilot/">Pilot brief</a>
     <a href="/trust/">Trust ledger</a>
     <a href="https://www.admira.tv">Spanish edition</a>
-    <span class="stamp">v.26.08.2026.r11.02:23</span>
+    <span class="stamp">v.02.10.2026.r1.08:38 · preview</span>
   </div>
 </footer>
 <script>
@@ -596,13 +862,70 @@ footer a:hover{color:var(--text)}
     renderBlueprint();
   }
 
+  // Frame: Options (left), Advanced (right), Expert (bottom). One panel open at a time.
+  function initFrame() {
+    var buttons = Array.from(document.querySelectorAll('[data-panel]'));
+    var scrim = document.querySelector('.panel-scrim');
+    var opener = null;
+    function panelOf(name) { return document.getElementById('panel-' + name); }
+    function close() {
+      buttons.forEach(function (b) { b.setAttribute('aria-expanded', 'false'); panelOf(b.dataset.panel).hidden = true; });
+      if (scrim) scrim.hidden = true;
+      if (opener) { opener.focus(); opener = null; }
+    }
+    function open(btn) {
+      var wasOpen = btn.getAttribute('aria-expanded') === 'true';
+      close();
+      if (wasOpen) return;
+      var panel = panelOf(btn.dataset.panel);
+      panel.hidden = false;
+      btn.setAttribute('aria-expanded', 'true');
+      if (scrim) scrim.hidden = false;
+      opener = btn;
+      if (btn.dataset.panel === 'expert') fillExpert();
+      var first = panel.querySelector('a,button');
+      if (first) first.focus();
+    }
+    buttons.forEach(function (b) { b.addEventListener('click', function () { open(b); }); });
+    document.addEventListener('click', function (e) {
+      if (e.target.closest('[data-panel-close]') || e.target.closest('.panel a[href^="#"]')) { opener = null; close(); }
+    });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });
+  }
+
+  function fillExpert() {
+    var products = Array.from(document.querySelectorAll('#launchpad .prod'));
+    var stamp = document.querySelector('footer .stamp');
+    var set = function (id, text) { var el = document.getElementById(id); if (el) el.textContent = text; };
+    set('expert-release', stamp ? stamp.textContent : 'unknown');
+    set('expert-brand', ((window.DSAI_BRAND && window.DSAI_BRAND.id) || 'unresolved') + ' · ' + window.location.host);
+    set('expert-products', products.length + ' cards');
+    set('expert-catalogue', document.querySelectorAll('#solutions article.sol').length + ' entries');
+    set('expert-status', 'Read ' + new Date().toISOString().slice(11, 19) + ' UTC');
+    var list = document.getElementById('expert-endpoints');
+    if (!list) return;
+    list.textContent = '';
+    products.forEach(function (card) {
+      var demo = card.querySelector('.prod-demo');
+      var li = document.createElement('li');
+      var name = document.createElement('b');
+      name.textContent = card.dataset.product || card.id;
+      var link = document.createElement('a');
+      link.href = demo ? demo.href : '#';
+      link.textContent = demo ? demo.href.replace(/^https?:\/\//, '') : 'no demo';
+      link.rel = 'noopener';
+      li.appendChild(name); li.appendChild(link); list.appendChild(li);
+    });
+  }
+
+  function start() { verifyCurrentDocument(); initBlueprint(); initFrame(); }
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', function () { verifyCurrentDocument(); initBlueprint(); });
+    document.addEventListener('DOMContentLoaded', start);
   } else {
-    verifyCurrentDocument();
-    initBlueprint();
+    start();
   }
 })();
 </script>
+<script src="/assets/locale.js"></script>
 </body>
 </html>
