@@ -130,6 +130,55 @@ header{position:sticky;top:0;z-index:20;backdrop-filter:blur(14px);background:rg
 .pad-foot{display:flex;flex-wrap:wrap;gap:18px 28px;align-items:center;justify-content:space-between;margin-top:40px;padding-top:26px;border-top:1px solid var(--border-strong)}
 .pad-foot p{margin:0;max-width:60ch;color:var(--muted);font-size:15px}
 
+/* ── see it with your brand ── */
+.yb{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(28px,5vw,64px);align-items:start}
+@media(max-width:900px){.yb{grid-template-columns:1fr}}
+.yb-form{display:grid;gap:10px;margin:0 0 14px}
+.yb-form label{font:600 11px/1.4 var(--mono);letter-spacing:.12em;text-transform:uppercase}
+.yb-row{display:flex;gap:8px;flex-wrap:wrap}
+.yb-row input{flex:1 1 220px;min-width:0;padding:14px 15px;border:1px solid var(--border);border-radius:2px;background:var(--bg);color:var(--text);font:500 15px/1.3 var(--sans)}
+.yb-row button{border:0;background:var(--amber);color:#190d09;padding:14px 18px;font:600 12px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;cursor:pointer}
+.yb-row button:hover{background:#ff7453}
+.yb-msg{min-height:1.4em;margin:0;font:11.5px/1.5 var(--mono);color:var(--amber)}
+.yb-note{color:var(--dim);font-size:13px;line-height:1.6;margin:10px 0 0;max-width:52ch}
+.yb-steps{list-style:none;margin:26px 0 0;padding:0;border-top:1px solid var(--border)}
+.yb-steps li{display:grid;grid-template-columns:34px minmax(0,1fr);gap:12px;padding:10px 0;border-bottom:1px solid var(--border);font-size:13.5px;color:var(--muted)}
+.yb-steps span{color:var(--amber);font:10px var(--mono);letter-spacing:.1em;padding-top:3px}
+.yb-steps b{color:var(--text);font-weight:600}
+.yb-room{border-top:1px solid var(--border-strong)}
+.yb-room-head{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:15px 0;border-bottom:1px solid var(--border)}
+.yb-room-head h3{margin:0;font:500 1.25rem/1.2 var(--serif)}
+.yb-chips{display:flex;flex-wrap:wrap;gap:7px;padding:14px 0}
+.yb-chip{font:600 11px/1 var(--mono);letter-spacing:.06em;color:var(--muted);background:transparent;border:1px solid var(--border);padding:9px 11px;cursor:pointer}
+.yb-chip:hover{color:var(--text);border-color:rgba(243,240,232,.4)}
+.yb-chip[aria-pressed="true"]{background:var(--text);color:var(--bg);border-color:transparent}
+.yb-stage{--b-bg:#F7F0E6;--b-surface:#FFFAF3;--b-border:#E2D2BD;--b-text:#2A1A12;--b-soft:#6E5646;--b-primary:#3B2318;--b-primary-text:#FFF7EC;--b-accent:#E0703A;--b-ok:#4F7D3A;--b-radius:14px;--b-btn:999px;--b-head:var(--serif);
+  background:var(--b-bg);color:var(--b-text);border:1px solid var(--border);padding:0;overflow:hidden;transition:background .3s,color .3s}
+.yb-stage *{transition:background .3s,color .3s,border-color .3s,border-radius .3s}
+.yb-top{display:flex;align-items:center;gap:12px;padding:13px 16px;border-bottom:1px solid var(--b-border);background:var(--b-surface)}
+.yb-logo{height:26px;max-width:150px;object-fit:contain;object-position:left center}
+.yb-top nav{margin-left:auto;display:flex;gap:14px;font-size:12px;color:var(--b-soft)}
+.yb-top nav b{color:var(--b-text);font-weight:600;border-bottom:2px solid var(--b-accent);padding-bottom:2px}
+@media(max-width:520px){.yb-top nav span{display:none}}
+.yb-body{display:grid;grid-template-columns:1.25fr .75fr;gap:14px;padding:16px}
+@media(max-width:520px){.yb-body{grid-template-columns:1fr}}
+.yb-card{background:var(--b-surface);border:1px solid var(--b-border);border-radius:var(--b-radius);padding:15px}
+.yb-card h4{margin:0 0 4px;font:700 1.25rem/1.15 var(--b-head);letter-spacing:-.01em;color:var(--b-text)}
+.yb-card p{margin:0 0 12px;font-size:12.5px;line-height:1.5;color:var(--b-soft)}
+.yb-screen{aspect-ratio:16/9;border-radius:calc(var(--b-radius) * .6);background:var(--b-primary);color:var(--b-primary-text);display:grid;place-items:center;text-align:center;padding:10px;font:700 clamp(1rem,2.4vw,1.5rem)/1.1 var(--b-head);margin-bottom:12px}
+.yb-screen small{display:block;margin-top:6px;font:500 10px/1.3 var(--mono);letter-spacing:.1em;text-transform:uppercase;opacity:.75}
+.yb-btn{display:inline-block;background:var(--b-primary);color:var(--b-primary-text);border-radius:var(--b-btn);padding:9px 15px;font:600 12px/1 var(--sans)}
+.yb-btn.alt{background:transparent;color:var(--b-text);border:1px solid var(--b-border);margin-left:6px}
+.yb-list{list-style:none;margin:0;padding:0;font-size:12px}
+.yb-list li{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:8px 0;border-bottom:1px solid var(--b-border);color:var(--b-text)}
+.yb-list li:last-child{border-bottom:0}
+.yb-state{display:inline-flex;align-items:center;gap:6px;font:10px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--b-soft)}
+.yb-state::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--b-ok)}
+.yb-state.warn::before{background:var(--b-accent)}
+.yb-ledger{margin:0}
+.yb-open{display:flex;flex-wrap:wrap;gap:10px 20px;padding:14px 0 0}
+.yb-caption{margin:12px 0 0;color:var(--dim);font:11px/1.55 var(--mono)}
+
 /* ── field cases ── */
 .cases{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:26px}
 @media(max-width:860px){.cases{grid-template-columns:1fr}}
@@ -307,7 +356,7 @@ footer a:hover{color:var(--text)}
       <a href="#launchpad">Products</a>
       <a href="#cases">Cases</a>
       <a class="opt" href="#solution-map" aria-label="Solution map">Twenty solutions</a>
-      <a class="opt" href="#whitelabel">White label</a>
+      <a class="opt" href="#your-brand">Your brand</a>
       <a class="nav-cta" href="/pilot/">Start a pilot</a>
     </nav>
     <div class="frame-right">
@@ -324,6 +373,7 @@ footer a:hover{color:var(--text)}
   <nav class="panel-nav" aria-label="Page sections">
     <a href="#launchpad"><span>01</span>Six products, one launchpad</a>
     <a href="#cases"><span>02</span>Field cases</a>
+    <a href="#your-brand"><span>★</span>See it with your brand</a>
     <a href="#roles"><span>03</span>Start from your role</a>
     <a href="#blueprint"><span>04</span>Network blueprint</a>
     <a href="#solutions"><span>05</span>Twenty solutions</a>
@@ -507,6 +557,72 @@ footer a:hover{color:var(--text)}
         </ul>
         <a class="role-next" href="https://www.xpaceos.com/xpacios/cafebreria/" rel="noopener">Enter the Cafebrería ↗</a>
       </article>
+    </div>
+  </div>
+</section>
+
+<section id="your-brand" aria-labelledby="your-brand-title">
+  <div class="wrap">
+    <header class="section-head">
+      <p class="section-folio"><b>YOU</b>White label · live fitting</p>
+      <div class="section-heading">
+        <h2 id="your-brand-title">See Admira with your <em>brand</em>.</h2>
+        <p class="sub">Type your website and the white-label desk drafts your logo, colours and typeface onto the products. Or try the fitting room first with three sample identities.</p>
+      </div>
+    </header>
+    <div class="yb">
+      <div>
+        <form class="yb-form" id="yb-form" action="https://www.admiranext.com/marcablanca/" method="get" target="_blank" rel="noopener" novalidate>
+          <label for="yb-url">Your website</label>
+          <div class="yb-row">
+            <input id="yb-url" name="web" type="url" inputmode="url" autocomplete="url" placeholder="https://www.yourbrand.com" required>
+            <button type="submit">Dress it in my brand ↗</button>
+          </div>
+          <p class="yb-msg" id="yb-msg" role="status" aria-live="polite"></p>
+        </form>
+        <p class="yb-note">Opens the white-label desk on admiranext.com in a new tab (the desk itself is in Spanish). It reads your public site once and saves nothing. The result is labelled as an automatic proposal, never as your official brand.</p>
+        <ol class="yb-steps" aria-label="What happens with your website">
+          <li><span>01</span><p><b>Read.</b> Logo, theme colour, palette, background and typeface are taken from your public pages.</p></li>
+          <li><span>02</span><p><b>Draft.</b> A proposal is built with readable contrast and the closest open-licence typeface.</p></li>
+          <li><span>03</span><p><b>Wear.</b> Create, distribute, sell and maintain are shown side by side in that identity, and as a short deck.</p></li>
+        </ol>
+      </div>
+      <aside class="yb-room" aria-labelledby="yb-room-title">
+        <div class="yb-room-head"><h3 id="yb-room-title">Fitting room</h3><span class="edition-live" id="yb-source">Built-in sample</span></div>
+        <div class="yb-chips" role="group" aria-label="Choose a sample identity">
+          <button class="yb-chip" type="button" data-yb="lumbre" aria-pressed="true">Lumbre Café</button>
+          <button class="yb-chip" type="button" data-yb="brumelle" aria-pressed="false">BRUMELLE</button>
+          <button class="yb-chip" type="button" data-yb="frescaria" aria-pressed="false">Frescaria</button>
+          <button class="yb-chip" type="button" data-yb="admira" aria-pressed="false">Admira</button>
+        </div>
+        <div class="yb-stage" id="yb-stage" aria-live="polite">
+          <div class="yb-top">
+            <img class="yb-logo" id="yb-logo" src="https://www.admiranext.com/marcablanca/logos/lumbre.svg" alt="Lumbre Café sample logo" height="26">
+            <nav aria-hidden="true"><b>Screens</b><span>Content</span><span>Campaigns</span><span>Upkeep</span></nav>
+          </div>
+          <div class="yb-body">
+            <div class="yb-card">
+              <div class="yb-screen"><span><span id="yb-name">Lumbre Café</span><small id="yb-sector">Coffee shops</small></span></div>
+              <h4>Now playing, storefront</h4>
+              <p>Three pieces in rotation. Last change published this morning.</p>
+              <span class="yb-btn">Publish</span><span class="yb-btn alt">Preview</span>
+            </div>
+            <div class="yb-card">
+              <h4>Screens</h4>
+              <ul class="yb-list">
+                <li>Storefront <span class="yb-state">Live</span></li>
+                <li>Counter menu <span class="yb-state">Live</span></li>
+                <li>Pick-up point <span class="yb-state warn">Check</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="yb-open">
+          <a class="role-next" id="yb-open-platforms" href="https://www.admiranext.com/marcablanca/?marca=lumbre" rel="noopener">Open the four products in this identity ↗</a>
+          <a class="role-next" id="yb-open-deck" href="https://www.admiranext.com/marcablanca/presentacion?marca=lumbre" rel="noopener">Open the deck ↗</a>
+        </div>
+        <p class="yb-caption">Lumbre Café, BRUMELLE and Frescaria are invented brands used to show the system. They do not represent any real company. The screen content in this mock is illustrative.</p>
+      </aside>
     </div>
   </div>
 </section>
@@ -781,7 +897,7 @@ footer a:hover{color:var(--text)}
     <a href="/pilot/">Pilot brief</a>
     <a href="/trust/">Trust ledger</a>
     <a href="https://www.admira.tv">Spanish edition</a>
-    <span class="stamp">v.02.10.2026.r1.08:38 · preview</span>
+    <span class="stamp">v.02.10.2026.r2.08:49 · preview</span>
   </div>
 </footer>
 <script>
@@ -918,7 +1034,71 @@ footer a:hover{color:var(--text)}
     });
   }
 
-  function start() { verifyCurrentDocument(); initBlueprint(); initFrame(); }
+  // Fitting room: dresses the mock with a brand from the public white-label catalogue.
+  function initYourBrand() {
+    var stage = document.getElementById('yb-stage');
+    var form = document.getElementById('yb-form');
+    if (!stage || !form) return;
+    var API = 'https://www.admiranext.com/marcablanca/api/marcas/';
+    var ORIGIN = 'https://www.admiranext.com';
+    var SECTORS = {lumbre: 'Coffee shops · sample brand', brumelle: 'Fashion · sample brand', frescaria: 'Supermarkets · sample brand', admira: 'Default identity'};
+    var chips = Array.from(document.querySelectorAll('[data-yb]'));
+    var source = document.getElementById('yb-source');
+    var cache = {};
+    function px(v, fallback) { return /^\d+(\.\d+)?px$/.test(String(v || '')) ? v : fallback; }
+    function colour(v, fallback) { return /^(#[0-9a-f]{3,8}|rgba?\([\d\s.,%]+\))$/i.test(String(v || '')) ? v : fallback; }
+    function dress(brand) {
+      var modes = brand.colores || {};
+      var c = modes[brand.modo] || modes.claro || modes.oscuro || {};
+      var set = function (name, value) { stage.style.setProperty(name, value); };
+      set('--b-bg', colour(c.fondo, '#F7F0E6')); set('--b-surface', colour(c.superficie, '#FFFAF3'));
+      set('--b-border', colour(c.borde, '#E2D2BD')); set('--b-text', colour(c.texto, '#2A1A12'));
+      set('--b-soft', colour(c.textoSuave, '#6E5646')); set('--b-primary', colour(c.primario, '#3B2318'));
+      set('--b-primary-text', colour(c.primarioTexto, '#FFF7EC')); set('--b-accent', colour(c.acento, '#E0703A'));
+      set('--b-ok', colour(c.ok, '#4F7D3A'));
+      set('--b-radius', px(brand.radios && brand.radios.md, '14px')); set('--b-btn', px(brand.radios && brand.radios.boton, '999px'));
+      var head = String((brand.tipografia && brand.tipografia.titulos) || '');
+      set('--b-head', /^[\w\s,'"-]+$/.test(head) && head ? head : 'var(--serif)');
+      var logo = document.getElementById('yb-logo');
+      var svg = brand.logo && brand.logo.svg;
+      if (logo && typeof svg === 'string' && /^\/marcablanca\/logos\/[\w.-]+\.svg$/.test(svg)) { logo.src = ORIGIN + svg; logo.alt = brand.nombre + ' sample logo'; }
+      document.getElementById('yb-name').textContent = brand.nombre || brand.id;
+      document.getElementById('yb-sector').textContent = SECTORS[brand.id] || 'Sample brand';
+      document.getElementById('yb-open-platforms').href = ORIGIN + '/marcablanca/?marca=' + encodeURIComponent(brand.id);
+      document.getElementById('yb-open-deck').href = ORIGIN + '/marcablanca/presentacion?marca=' + encodeURIComponent(brand.id);
+    }
+    function choose(id, chip) {
+      chips.forEach(function (c) { c.setAttribute('aria-pressed', String(c === chip)); });
+      var ready = cache[id] ? Promise.resolve(cache[id]) : fetch(API + encodeURIComponent(id), {headers: {Accept: 'application/json'}})
+        .then(function (r) { if (!r.ok) throw new Error(String(r.status)); return r.json(); })
+        .then(function (b) { cache[id] = b; return b; });
+      ready.then(function (b) { dress(b); source.textContent = 'Live from the catalogue'; })
+        .catch(function () { source.textContent = 'Catalogue unreachable · showing last identity'; });
+    }
+    chips.forEach(function (chip) { chip.addEventListener('click', function () { choose(chip.dataset.yb, chip); }); });
+    var wanted = new URLSearchParams(window.location.search).get('fit');
+    var preset = chips.filter(function (c) { return c.dataset.yb === wanted; })[0];
+    if (preset) choose(wanted, preset);
+
+    var input = document.getElementById('yb-url');
+    var msg = document.getElementById('yb-msg');
+    form.addEventListener('submit', function (event) {
+      var raw = String(input.value || '').trim();
+      if (raw && !/^[a-z][a-z0-9+.-]*:\/\//i.test(raw)) raw = 'https://' + raw;
+      var url;
+      try { url = new URL(raw); } catch (e) { url = null; }
+      if (!url || url.protocol !== 'https:' || url.hostname.indexOf('.') === -1) {
+        event.preventDefault();
+        msg.textContent = 'Type a public https address, for example https://www.yourbrand.com';
+        input.focus();
+        return;
+      }
+      input.value = url.href;
+      msg.textContent = 'Opening the white-label desk with ' + url.hostname + '…';
+    });
+  }
+
+  function start() { verifyCurrentDocument(); initBlueprint(); initFrame(); initYourBrand(); }
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', start);
   } else {
@@ -927,5 +1107,6 @@ footer a:hover{color:var(--text)}
 })();
 </script>
 <script src="/assets/locale.js"></script>
+<script src="/assets/your-brand.js"></script>
 </body>
 </html>
