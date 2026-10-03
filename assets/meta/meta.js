@@ -16,7 +16,7 @@ const SOL=[
  {id:'studio',n:'01',c:'#FF33CC',v:['Crear','Create'],w:['https://www.admira.studio/','https://pixeria.com/'],m:'pixeria.com'},
  {id:'store', n:'02',c:'#FFCC00',v:['Operar','Operate'],w:['https://www.admira.store/','https://xpaceos.com/'],m:'xpaceos.com'},
  {id:'tv',    n:'03',c:'#33FF99',v:['Emitir','Broadcast'],w:['https://admira.tv/','https://admira.tv/'],m:''},
- {id:'app',   n:'04',c:'#26DEEC',v:['Monetizar','Monetize'],w:['https://www.admira.app/','https://clearchannel.tv/'],m:'clearchannel.tv'},
+ {id:'app',   n:'04',c:'#FFFFFF',v:['Monetizar','Monetize'],w:['https://www.admira.app/','https://clearchannel.tv/'],m:'clearchannel.tv'},
  {id:'biz',   n:'05',c:'#FF3366',v:['Cuidar','Care'],w:['https://www.admira.biz/','https://yokup.com/'],m:'yokup.com'}];
 const DEMO=['https://www.admira.app/','https://clearchannel.tv/'];
 const en=()=>H.lang==='en',X=()=>en()?1:0;
@@ -47,7 +47,8 @@ const RIGHT=`<div class="mx-blk"><p class="mx-blk-t">${L('Ir a','Go to')}</p><ul
 <li><a data-mx-demo href="${DEMO[0]}" data-href-es="${DEMO[0]}" data-href-en="${DEMO[1]}">${L('Abrir la demo (globo)','Open the demo (globe)')}<small>↗</small></a></li></ul></div>
 <div class="mx-blk"><p class="mx-blk-t">${L('Metaestilo de esta solución','This solution’s meta-style')}</p>
 <div class="mx-swatch" style="--c:${cur.c}"><i></i>${L('acento','accent')} admira.${cur.id} · ${cur.c}</div>
-<div class="mx-swatch" style="--c:#689840"><i></i>${L('verde Admira (nube)','Admira green (cloud)')} · #689840</div>
+<div class="mx-swatch" style="--c:#33FF99"><i></i>${L('botón de demo','demo button')} · #33FF99</div>
+<div class="mx-swatch" style="--c:linear-gradient(90deg,#FFFFFF,#FF3366,#FFCC00,#33FF99,#FF33CC)"><i style="background:var(--c)"></i>${L('paleta ADmiraNeXT','ADmiraNeXT palette')} · #FFFFFF #FF3366 #FFCC00 #33FF99 #FF33CC</div>
 <div class="mx-swatch" style="--c:#060c12"><i></i>${L('fondo','background')} · #060c12</div></div>`;
 const BOTTOM=`<div class="mx-cli"><pre class="mx-cli-out" data-mx-out aria-live="polite"></pre><form class="mx-cli-form" data-mx-form><label for="mx-cli-in">admira.${here||'site'} ›</label><input id="mx-cli-in" autocomplete="off" spellcheck="false" placeholder="/help"><button type="submit">${L('Ejecutar','Run')}</button></form></div>`;
 const rail=(side,g,es,e,body,ft)=>`<aside class="mx-rail mx-rail--${side}" id="mx-${side}" aria-label="${esc(es)}" data-aria-es="${esc(es)}" data-aria-en="${esc(e)}" inert><div class="mx-grip" role="separator" tabindex="0" aria-orientation="${side==='bottom'?'horizontal':'vertical'}" aria-controls="mx-${side}" aria-label="${esc(es)}: tamaño" data-mx-grip="${side}"></div><div class="mx-rail-hd"><span>${g} ${L(es.toUpperCase(),e.toUpperCase())}</span><button type="button" data-mx-close="${side}" aria-label="Cerrar">×</button></div><div class="mx-rail-bd">${body}</div>${ft?`<div class="mx-rail-ft">${WM}<span>${esc(VER)}</span></div>`:''}</aside>`;
@@ -111,7 +112,7 @@ const VERBS={
  '/video':['/video <play|pause>',a=>print(act('video',a),'m')],
  '/demo':['abre el globo de admira.app / clearchannel.tv',()=>{const u=DEMO[X()];print('→ '+u,'m');window.open(u,'_blank','noopener');}],
  '/web':['abre la web de esta solución',()=>{const u=cur.w[X()];print('→ '+u,'m');window.open(u,'_blank','noopener');}],
- '/tokens':['muestra los tokens del metaestilo',()=>{const cs=getComputedStyle(B);['--acc','--mx-green','--mx-bg','--mx-ink','--mx-display','--mx-head','--mx-body'].forEach(v=>print(`  ${v.padEnd(12)} ${cs.getPropertyValue(v).trim()}`));}],
+ '/tokens':['muestra los tokens del metaestilo',()=>{const cs=getComputedStyle(B);['--acc','--mx-demo','--mx-n','--mx-e','--mx-x','--mx-t','--mx-w','--mx-bg','--mx-ink','--mx-display','--mx-head','--mx-body'].forEach(v=>print(`  ${v.padEnd(12)} ${cs.getPropertyValue(v).trim()}`));}],
  '/tamano':['/tamano <left|right|bottom> <px|def>',a=>{const [s,p]=(a||'').split(/\s+/);if(!R[s])return print('panel: left | right | bottom','e');print(`${s}: ${size(s,p==='def'||!p?null:+p)} px`,'m');}],
  '/limpiar':['limpia la salida',()=>{out.textContent='';}]};
 let hist=[],hi=0;

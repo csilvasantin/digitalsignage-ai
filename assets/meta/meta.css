@@ -7,25 +7,27 @@
 :root{
   /* superficie (los mismos tokens de la portada y de la barra) */
   --mx-bg:#060c12;--mx-panel:#0b151e;--mx-raise:#101e29;--mx-chip:#16222c;--mx-line:#233642;--mx-line2:#2f4654;
-  --mx-ink:#f0f7fa;--mx-soft:#c3d4df;--mx-muted:#a6bac7;--mx-cyan:#26deec;
-  /* marca: verde Admira de la nube y neones del logotipo oficial */
-  --mx-green:#689840;--mx-green-hi:#8cc35a;--mx-green-ink:#0b1408;
-  --mx-n:#FF3366;--mx-e:#FFCC00;--mx-x:#33FF99;--mx-t:#FF33CC;
+  --mx-ink:#f0f7fa;--mx-soft:#c3d4df;--mx-muted:#a6bac7;
+  /* paleta ÚNICA: los colores del logotipo ADmiraNeXT (Carlos, 3-oct-2026). Nada de cian ni verde oliva. */
+  --mx-w:#FFFFFF;--mx-n:#FF3366;--mx-e:#FFCC00;--mx-x:#33FF99;--mx-t:#FF33CC;
+  --mx-neon:linear-gradient(90deg,#FFFFFF,#FF3366,#FFCC00,#33FF99,#FF33CC);
+  /* botón de demo: verde X del logotipo, tinta oscura (contraste 14:1); al pasar, blanco */
+  --mx-demo:#33FF99;--mx-demo-hi:#FFFFFF;--mx-demo-ink:#03140b;
   /* tipografía */
   --mx-display:'Instrument Serif',Georgia,'Times New Roman',serif;
   --mx-head:'Space Grotesk',system-ui,sans-serif;
   --mx-body:'DM Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
   --mx-mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
   /* forma */
-  --mx-r-sm:6px;--mx-r:12px;--mx-r-lg:18px;--mx-w:1200px;--mx-gut:16px;
+  --mx-r-sm:6px;--mx-r:12px;--mx-r-lg:18px;--mx-cw:1200px;--mx-gut:16px;
   --mx-bar:var(--dsn-h,76px);--mx-strip:48px;
   /* acento por defecto (cada landing lo cambia) */
-  --acc:var(--mx-cyan);--acc-ink:#031118;--acc-soft:#26deec22;
+  --acc:#33FF99;--acc-ink:#03140b;--acc-soft:#33ff9922;
 }
 body[data-sol=studio]{--acc:#FF33CC;--acc-ink:#1d0218;--acc-soft:#ff33cc22}
 body[data-sol=store] {--acc:#FFCC00;--acc-ink:#1a1400;--acc-soft:#ffcc0022}
 body[data-sol=tv]    {--acc:#33FF99;--acc-ink:#021a0e;--acc-soft:#33ff9922}
-body[data-sol=app]   {--acc:#26DEEC;--acc-ink:#031118;--acc-soft:#26deec22}
+body[data-sol=app]   {--acc:#FFFFFF;--acc-ink:#060c12;--acc-soft:#ffffff1a}
 body[data-sol=biz]   {--acc:#FF3366;--acc-ink:#1d020a;--acc-soft:#ff336622}
 
 /* ── logotipo oficial ADmiraNeXT (admira-next-web/assets/admira-frame.md §Logotipo) ── */
@@ -34,7 +36,7 @@ body[data-sol=biz]   {--acc:#FF3366;--acc-ink:#1d020a;--acc-soft:#ff336622}
 
 /* ── base de landing ── */
 body.mx{font-family:var(--mx-body);overflow-x:hidden}
-.mx-wrap{width:min(var(--mx-w),calc(100% - 2 * var(--mx-gut)));margin:0 auto}
+.mx-wrap{width:min(var(--mx-cw),calc(100% - 2 * var(--mx-gut)));margin:0 auto}
 .mx main{display:block}
 .mx a:focus-visible,.mx button:focus-visible,.mx [tabindex]:focus-visible{outline:3px solid var(--acc);outline-offset:3px}
 html{scroll-padding-top:calc(var(--mx-bar) + var(--mx-strip) + 16px)}
@@ -53,7 +55,7 @@ html{scroll-padding-top:calc(var(--mx-bar) + var(--mx-strip) + 16px)}
 
 /* ── héroe: titular + nube con el vídeo ── */
 .mx-hero{position:relative;padding:64px 0 72px;overflow:hidden}
-.mx-hero:before{content:'';position:absolute;inset:-20% -10% auto auto;width:70%;height:120%;background:radial-gradient(closest-side,var(--acc-soft),transparent 70%),radial-gradient(closest-side at 60% 60%,#68984026,transparent 75%);pointer-events:none}
+.mx-hero:before{content:'';position:absolute;inset:-20% -10% auto auto;width:70%;height:120%;background:radial-gradient(closest-side,var(--acc-soft),transparent 70%),radial-gradient(closest-side at 60% 60%,#ff33cc12,transparent 75%);pointer-events:none}
 .mx-hero-grid{position:relative;display:grid;grid-template-columns:1.05fr 1fr;gap:48px;align-items:center}
 .mx-kicker{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;margin:0 0 26px;font:600 12px/1.2 var(--mx-body);letter-spacing:.16em;color:var(--mx-muted);text-transform:uppercase}
 .mx-kicker .mx-num{color:var(--acc)}
@@ -66,15 +68,15 @@ html{scroll-padding-top:calc(var(--mx-bar) + var(--mx-strip) + 16px)}
 .mx-ctas{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:30px}
 .mx-btn{display:inline-flex;align-items:center;gap:8px;min-height:50px;padding:0 22px;border-radius:10px;font:700 16px/1 var(--mx-body);border:1px solid transparent;transition:transform .18s,background .18s,border-color .18s}
 .mx-btn:hover{transform:translateY(-2px)}
-.mx-btn--demo{background:var(--mx-green);color:var(--mx-green-ink)}
-.mx-btn--demo:hover{background:var(--mx-green-hi)}
+.mx-btn--demo{background:var(--mx-demo);color:var(--mx-demo-ink)}
+.mx-btn--demo:hover{background:var(--mx-demo-hi)}
 .mx-btn--acc{background:var(--acc);color:var(--acc-ink)}
 .mx-btn--ghost{border-color:var(--mx-line2);color:var(--mx-ink);background:transparent}
 .mx-btn--ghost:hover{border-color:var(--acc);color:var(--acc)}
 .mx-tags{display:flex;flex-wrap:wrap;gap:8px}
 .mx-tag{font:600 11px/1 var(--mx-body);letter-spacing:.12em;color:var(--acc);border:1px solid color-mix(in srgb,var(--acc) 35%,transparent);border-radius:99px;padding:7px 11px}
 .mx-hero-visual{position:relative}
-.mx-cloud-glow{position:relative;aspect-ratio:1.595;filter:drop-shadow(0 30px 60px #68984033)}
+.mx-cloud-glow{position:relative;aspect-ratio:1.595;filter:drop-shadow(0 30px 60px color-mix(in srgb,var(--acc) 18%,transparent))}
 .mx-cloud-glow:before{content:'';position:absolute;inset:8% 6%;border-radius:50%;background:radial-gradient(closest-side,color-mix(in srgb,var(--acc) 30%,transparent),transparent);filter:blur(40px);z-index:-1}
 .mx-cloud{position:absolute;inset:0;background:#0b151e;-webkit-clip-path:url(#mx-cloud-clip);clip-path:url(#mx-cloud-clip)}
 .mx-cloud video{display:block;width:100%;height:100%;object-fit:cover}
@@ -137,14 +139,13 @@ html{scroll-padding-top:calc(var(--mx-bar) + var(--mx-strip) + 16px)}
 .mx-link>span{display:block;margin-top:8px;font-size:14px;color:var(--mx-muted);line-height:1.45}
 .mx-link[aria-current=page]{border-color:var(--c);background:linear-gradient(160deg,color-mix(in srgb,var(--c) 14%,#08121b),#08121b)}
 .mx-link[aria-current=page]:after{content:attr(data-here);position:absolute;top:14px;right:14px;font:700 9px/1 var(--mx-body);letter-spacing:.14em;color:var(--c)}
-.mx-cta{position:relative;margin:0 0 88px;padding:56px 48px;border-radius:var(--mx-r-lg);overflow:hidden;background:radial-gradient(120% 140% at 85% 20%,#689840 0%,#2c4a1c 38%,#0b1610 75%);border:1px solid #689840aa}
-.mx-cta:after{content:'';position:absolute;right:-60px;bottom:-80px;width:420px;aspect-ratio:1.595;background:#ffffff10;-webkit-clip-path:url(#mx-cloud-clip);clip-path:url(#mx-cloud-clip)}
-.mx-cta .mx-eyebrow{color:#d8f5c0}
+.mx-cta{position:relative;margin:0 0 88px;padding:56px 48px;border-radius:var(--mx-r-lg);overflow:hidden;border:1px solid #ffffff24;background:radial-gradient(55% 90% at 0% 0%,#ff336626,transparent 62%),radial-gradient(45% 80% at 32% 100%,#ffcc001c,transparent 62%),radial-gradient(50% 90% at 66% 0%,#33ff9922,transparent 62%),radial-gradient(50% 95% at 100% 100%,#ff33cc2e,transparent 62%),linear-gradient(135deg,#0b0f16,#060c12)}
+.mx-cta:before{content:'';position:absolute;left:0;right:0;top:0;height:3px;background:var(--mx-neon)}
+.mx-cta:after{content:'';position:absolute;right:-60px;bottom:-80px;width:420px;aspect-ratio:1.595;background:#ffffff0c;-webkit-clip-path:url(#mx-cloud-clip);clip-path:url(#mx-cloud-clip)}
+.mx-cta .mx-eyebrow{color:#fff}
 .mx-cta .mx-h2{max-width:720px;color:#fff}
-.mx-cta p{position:relative;z-index:1;max-width:620px;color:#e3f3d8;font-size:18px;margin:18px 0 28px}
+.mx-cta p{position:relative;z-index:1;max-width:620px;color:var(--mx-soft);font-size:18px;margin:18px 0 28px}
 .mx-cta .mx-ctas{position:relative;z-index:1;margin:0}
-.mx-cta .mx-btn--demo{background:#f0f7fa;color:#0b1408}
-.mx-cta .mx-btn--demo:hover{background:#fff}
 .mx-cta .mx-btn--ghost{border-color:#ffffff66;color:#fff}
 .mx-cta .mx-btn--ghost:hover{border-color:#fff;color:#fff}
 .mx-foot-wm{display:flex;align-items:center;gap:10px;font-size:12px;color:var(--mx-muted);letter-spacing:.14em}
@@ -154,6 +155,16 @@ html{scroll-padding-top:calc(var(--mx-bar) + var(--mx-strip) + 16px)}
 .mx-shot-dialog img{display:block;width:100%;height:auto}
 .mx-shot-dialog p{margin:0;padding:10px 14px;font-size:13px;color:var(--mx-muted);display:flex;justify-content:space-between;gap:12px}
 .mx-shot-dialog button{background:none;border:1px solid var(--mx-line2);color:var(--mx-ink);border-radius:6px;cursor:pointer;padding:2px 10px}
+
+/* ── la barra y el pie del sitio, en la paleta ADmiraNeXT (sólo en las landings; menu.css y style.css no se tocan) ── */
+body.mx{--cyan:var(--acc)}
+body.mx .dsn{--dsn-cyan:var(--acc);--dsn-yellow:#FFCC00;--dsn-yellow-ink:#1a1400;--dsn-orange:#FF3366;--dsn-orange-ink:#1d020a}
+body.mx .wordmark-logo tspan{fill:var(--acc)}
+body.mx .dsn-mlink:hover .dsn-ico,body.mx .dsn-mlink.is-active .dsn-ico,body.mx .dsn-mlink:focus-visible .dsn-ico{border-color:color-mix(in srgb,var(--acc) 35%,transparent)}
+body.mx .dsn-dots-idle{background-image:radial-gradient(circle at 50% 50%,var(--acc) 0,var(--acc) 1px,transparent 1.6px)}
+body.mx .dsn-dots-halo{background-image:radial-gradient(circle at 50% 50%,var(--acc) 0,var(--acc) 1.2px,transparent 1.8px)}
+body.mx .dsn-dots-halo:before{background:radial-gradient(closest-side,color-mix(in srgb,var(--acc) 10%,transparent),transparent)}
+body.mx .skip{color:var(--acc-ink)}
 
 /* ── armazón cuadrático: botones en la barra del sitio ── */
 .mx-tog{flex:none;display:inline-flex;align-items:center;gap:7px;height:40px;padding:0 12px;border:1px solid #2a3e4b;border-radius:10px;background:transparent;color:var(--mx-ink);font:600 13px/1 var(--mx-body);cursor:pointer;white-space:nowrap}
