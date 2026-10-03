@@ -1,0 +1,172 @@
+{
+  "$esquema": "https://www.admiranext.com/marcablanca/clientes/esquema.json",
+  "id": "digitalsignage-ai",
+  "nombre": "digitalsignage.ai",
+  "nombreCorto": "digitalsignage.ai",
+  "ejemplo": false,
+  "sector": "Retail físico",
+  "descripcion": "Propuesta de marca blanca generada automáticamente a partir de https://www.digitalsignage.ai/?brand=20261002. No es la marca oficial de digitalsignage.ai.",
+  "logo": {
+    "imagen": "/assets/logo.svg",
+    "alt": "digitalsignage.ai"
+  },
+  "favicon": "/marcablanca/api/marcas/digitalsignage-ai/logo",
+  "modo": "oscuro",
+  "tipografia": {
+    "titulos": "'DM Sans', -apple-system, 'Segoe UI', Roboto, sans-serif",
+    "texto": "'DM Sans', -apple-system, 'Segoe UI', Roboto, sans-serif",
+    "mono": "ui-monospace, SFMono-Regular, Menlo, monospace",
+    "etiquetas": "'DM Sans', -apple-system, 'Segoe UI', Roboto, sans-serif",
+    "pesoTitulos": 700,
+    "transformTitulos": "none",
+    "trackingTitulos": "-0.02em",
+    "fuentes": [
+      {
+        "familia": "DM Sans",
+        "url": "/marcablanca/fuentes/dmsans.woff2",
+        "peso": "400 800"
+      }
+    ]
+  },
+  "radios": {
+    "sm": "6px",
+    "md": "12px",
+    "lg": "18px",
+    "boton": "12px",
+    "pill": "999px"
+  },
+  "sombras": {
+    "sm": "0 1px 2px rgba(0,0,0,.08)",
+    "md": "0 8px 24px rgba(0,0,0,.12)",
+    "lg": "0 24px 60px rgba(0,0,0,.18)"
+  },
+  "tono": {
+    "voz": "Claro, cercano y propio de digitalsignage.ai.",
+    "tratamiento": "tú",
+    "si": [],
+    "no": [],
+    "frases": {
+      "cta": "Descúbrelo",
+      "vacio": "Todo en orden por aquí.",
+      "error": "Algo ha fallado. Lo estamos arreglando.",
+      "exito": "¡Listo!"
+    }
+  },
+  "colores": {
+    "claro": {
+      "primario": "#1A97A1",
+      "primarioTexto": "#000000",
+      "secundario": "#080B12",
+      "secundarioTexto": "#FFFFFF",
+      "acento": "#859197",
+      "acentoTexto": "#181A1B",
+      "fondo": "#F7FEFE",
+      "fondoAlt": "#EEFCFD",
+      "superficie": "#FFFFFF",
+      "superficieAlt": "#F4FDFE",
+      "borde": "#DCFAFC",
+      "texto": "#142B31",
+      "textoSuave": "#5D6F73",
+      "textoTenue": "#8A999C",
+      "ok": "#2F7D4F",
+      "aviso": "#B7791F",
+      "error": "#C0392B",
+      "info": "#2B6CB0"
+    },
+    "oscuro": {
+      "primario": "#26DEEC",
+      "primarioTexto": "#0A383B",
+      "secundario": "#6B6D70",
+      "secundarioTexto": "#FFFFFF",
+      "acento": "#C3D4DF",
+      "acentoTexto": "#232628",
+      "fondo": "#080B12",
+      "fondoAlt": "#11141B",
+      "superficie": "#171A20",
+      "superficieAlt": "#181B22",
+      "borde": "#2D3037",
+      "texto": "#EDF5F8",
+      "textoSuave": "#A8AFB3",
+      "textoTenue": "#767B80",
+      "ok": "#6FCF97",
+      "aviso": "#F2C94C",
+      "error": "#EB5757",
+      "info": "#56CCF2"
+    }
+  },
+  "demo": {
+    "titular": "digitalsignage.ai, también en pantalla",
+    "producto": "Campaña de temporada",
+    "cta": "Descúbrelo",
+    "prompt": "Cartel vertical de digitalsignage.ai: producto protagonista, colores de marca, titular corto y llamada a la acción",
+    "circuito": "Circuito digitalsignage.ai · 36 puntos",
+    "puntos": 36,
+    "superficies": 148,
+    "imprDia": "84.200",
+    "cpm": "7,10 €",
+    "tipoEspacio": "Retail físico",
+    "tiendas": [
+      {
+        "nombre": "digitalsignage.ai Centro",
+        "dir": "Gran Vía 24 · Madrid"
+      },
+      {
+        "nombre": "digitalsignage.ai Diagonal",
+        "dir": "Av. Diagonal 512 · Barcelona"
+      },
+      {
+        "nombre": "digitalsignage.ai Ruzafa",
+        "dir": "Carrer de Sueca 18 · Valencia"
+      }
+    ],
+    "superficiesTipo": [
+      "escaparate",
+      "caja",
+      "pasillo"
+    ],
+    "piezas": [
+      "Escaparate · temporada",
+      "Pantalla caja · promo",
+      "Pasillo · novedades"
+    ],
+    "incidencias": [
+      {
+        "id": "INC-4A21",
+        "equipo": "Pantalla escaparate",
+        "tienda": "digitalsignage.ai Centro",
+        "prioridad": "Alta",
+        "estado": "abierta"
+      },
+      {
+        "id": "INC-4A17",
+        "equipo": "Hilo musical",
+        "tienda": "digitalsignage.ai Diagonal",
+        "prioridad": "Media",
+        "estado": "curso"
+      },
+      {
+        "id": "INC-4A09",
+        "equipo": "Player de caja",
+        "tienda": "digitalsignage.ai Ruzafa",
+        "prioridad": "Baja",
+        "estado": "resuelta"
+      }
+    ]
+  },
+  "origen": {
+    "tipo": "url",
+    "web": "https://www.digitalsignage.ai/?brand=20261002",
+    "creadaEn": "2026-10-02T14:43:53.242Z"
+  },
+  "catalogo": {
+    "tipo": "real",
+    "origen": "url",
+    "propuesta": true,
+    "web": "https://www.digitalsignage.ai/?brand=20261002",
+    "aviso": "Propuesta generada automáticamente a partir de https://www.digitalsignage.ai/?brand=20261002; no es la marca oficial de digitalsignage.ai.",
+    "autor": "Carlos · Recuperación",
+    "creadaEn": "2026-10-02T14:43:53.242Z",
+    "actualizadaEn": "2026-10-02T14:46:10.650Z",
+    "protegida": false
+  }
+}

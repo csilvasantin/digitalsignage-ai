@@ -1,6 +1,0 @@
-User-agent: *
-Allow: /
-
-# Agents: start here, not at the homepage.
-# Machine-readable entry point (norma 24 — one door for carbon, one for silicon):
-Sitemap: https://www.digitalsignage.ai/sitemap.xml

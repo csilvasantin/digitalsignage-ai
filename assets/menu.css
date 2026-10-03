@@ -1,0 +1,147 @@
+/* Cabecera de digitalsignage.ai: barra, megamenú y panel móvil.
+   Todo va con prefijo .dsn para no pisar las maquetas de /demo/ (que tienen sus propios <header> y <nav>).
+   El marcado lo genera /assets/app.js a partir del marcador <header class="dsn" data-site-header>. */
+.dsn{--dsn-bg:#060c12;--dsn-panel:#0b141c;--dsn-raise:#131f29;--dsn-chip:#16222c;--dsn-line:#1f303c;--dsn-ink:#f0f7fa;--dsn-soft:#d3e1e8;--dsn-muted:#8fa5b2;--dsn-cyan:#26deec;--dsn-yellow:#fff27a;--dsn-yellow-ink:#16150b;--dsn-orange:#D63E1A;--dsn-orange-ink:#fff;--dsn-h:76px;position:sticky;top:0;z-index:60;color:var(--dsn-ink);font-family:'DM Sans',system-ui,-apple-system,'Segoe UI',sans-serif;line-height:1.3}
+.dsn:before{content:'';position:absolute;inset:0;background:#060c12ee;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid #ffffff12;z-index:-1}
+.dsn *,.dsn *:before,.dsn *:after{box-sizing:border-box}
+.dsn a{color:inherit;text-decoration:none}
+.dsn ul{list-style:none;margin:0;padding:0}
+.dsn-bar{position:relative;height:var(--dsn-h);display:flex;align-items:center;gap:28px;padding:0 4.5%}
+.dsn-logo{flex:none;display:flex;align-items:center}
+.dsn .wordmark-logo{display:block;width:210px;height:auto}
+.dsn-drawer{flex:1;min-width:0;display:flex;align-items:center;gap:24px}
+.dsn-nav{flex:1;min-width:0}
+.dsn-list{display:flex;align-items:center;gap:2px}
+.dsn-item{position:static}
+.dsn-item--sm{position:relative}
+.dsn-i{width:18px;height:18px;flex:none}
+.dsn-i path{fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.dsn-chev{width:14px;height:14px;transition:transform .2s;opacity:.8}
+[aria-expanded=true]>.dsn-chev{transform:rotate(180deg)}
+.dsn-trigger,.dsn-link{display:inline-flex;align-items:center;gap:6px;height:40px;padding:0 14px;border:0;border-radius:10px;background:transparent;color:var(--dsn-soft);font:500 15px/1 'DM Sans',system-ui,sans-serif;cursor:pointer;white-space:nowrap;transition:background .15s,color .15s}
+.dsn-trigger:hover,.dsn-link:hover,.dsn-trigger[aria-expanded=true]{background:#1b2832;color:#fff}
+.dsn-trigger.is-current,.dsn-link[aria-current=page]{color:var(--dsn-cyan)}
+.dsn-actions{display:flex;align-items:center;gap:10px;margin-left:auto}
+.dsn-btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;height:42px;padding:0 18px;border:0;border-radius:12px;font:700 15px/1 'DM Sans',system-ui,sans-serif;cursor:pointer;white-space:nowrap;transition:transform .15s,filter .15s,box-shadow .15s}
+.dsn-btn:hover{filter:brightness(1.06);transform:translateY(-1px)}
+.dsn-btn--signin{background:var(--dsn-yellow);color:var(--dsn-yellow-ink)}
+.dsn-btn--signin[aria-expanded=true]{box-shadow:0 0 0 3px #fff27a40}
+.dsn-btn--start{background:var(--dsn-orange);color:var(--dsn-orange-ink)}
+.dsn-lang{flex:none;height:40px;min-width:42px;padding:0 10px;border:1px solid #2a3e4b;border-radius:10px;background:transparent;color:var(--dsn-ink);font:600 13px/1 'DM Sans',system-ui,sans-serif;letter-spacing:.06em;cursor:pointer}
+.dsn-lang:hover{border-color:var(--dsn-cyan);color:var(--dsn-cyan)}
+.dsn-burger{display:none;flex:none;width:44px;height:44px;place-items:center;border:1px solid #2a3e4b;border-radius:12px;background:transparent;color:var(--dsn-ink);cursor:pointer}
+.dsn-burger .dsn-i{width:22px;height:22px}
+.dsn-burger .dsn-close,.dsn.is-open .dsn-burger .dsn-open{display:none}
+.dsn.is-open .dsn-burger .dsn-close{display:block}
+.dsn a:focus-visible,.dsn button:focus-visible{outline:3px solid var(--dsn-cyan);outline-offset:2px}
+
+/* Paneles */
+.dsn-panel{position:absolute;top:calc(100% + 8px);z-index:2;background:var(--dsn-panel);border:1px solid var(--dsn-line);border-radius:18px;box-shadow:0 30px 80px #000c,0 0 0 1px #00000040;padding:18px}
+.dsn-panel:before{content:'';position:absolute;left:0;right:0;top:-14px;height:14px}
+.dsn-panel[hidden]{display:none}
+.dsn-mega{left:4.5%;right:4.5%;max-width:1180px;margin:0 auto;display:grid;grid-template-columns:repeat(3,minmax(0,1fr)) minmax(260px,1.3fr);gap:10px;padding:20px}
+.dsn-pop{left:0;width:340px}
+.dsn-signin .dsn-pop{left:auto;right:0;width:300px}
+.dsn-col-title{margin:4px 10px 10px;font:600 11.5px/1.2 'DM Sans',system-ui,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--dsn-muted)}
+.dsn-col ul,.dsn-pop ul{display:grid;gap:2px}
+.dsn-mlink{display:flex;align-items:center;gap:12px;padding:7px 10px;border-radius:11px;color:#e3edf2;font:500 15px/1.25 'DM Sans',system-ui,sans-serif;transition:background .12s}
+.dsn-mlink:hover,.dsn-mlink.is-active,.dsn-mlink:focus-visible{background:var(--dsn-raise)}
+.dsn-mlink[aria-current=page] .dsn-mlabel{color:var(--dsn-cyan)}
+.dsn-ico{flex:none;width:34px;height:34px;display:grid;place-items:center;border-radius:9px;background:var(--dsn-chip);border:1px solid #243541;color:#c9dbe4;transition:color .12s,border-color .12s}
+.dsn-mlink:hover .dsn-ico,.dsn-mlink.is-active .dsn-ico,.dsn-mlink:focus-visible .dsn-ico{color:var(--dsn-cyan);border-color:#26deec55}
+.dsn-mtext{display:flex;flex-direction:column;gap:3px;min-width:0}
+.dsn-mlabel{display:flex;align-items:center;gap:6px}
+.dsn-ext{font-size:11px;color:var(--dsn-muted)}
+.dsn-mdesc{font-size:12.5px;font-weight:400;color:var(--dsn-muted);line-height:1.35}
+.dsn-sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.dsn-preview{display:flex;flex-direction:column;border-radius:14px;overflow:hidden;background:var(--dsn-raise);border:1px solid var(--dsn-line);align-self:start}
+.dsn-preview img{display:block;width:100%;height:auto;aspect-ratio:1280/610;object-fit:cover;object-position:left top;background:#0a1219}
+.dsn-preview-body{padding:14px 16px 16px;min-height:92px}
+.dsn-preview strong{display:block;font:600 18px/1.2 'Space Grotesk','DM Sans',sans-serif;letter-spacing:-.02em;color:var(--dsn-ink)}
+.dsn-preview p{margin:6px 0 0;font-size:13.5px;line-height:1.45;color:var(--dsn-muted)}
+@media (prefers-reduced-motion:no-preference){.dsn-panel:not([hidden]){animation:dsn-in .16s ease-out}.dsn-preview img{transition:opacity .15s}}
+@keyframes dsn-in{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+
+/* Escritorio estrecho (900–1180 px): todo cabe sin esconder nada */
+@media (min-width:900px) and (max-width:1259.98px){
+.dsn-bar{gap:14px;padding:0 20px}
+.dsn .wordmark-logo{width:160px}
+.dsn-drawer{gap:12px}
+.dsn-trigger,.dsn-link{padding:0 9px;font-size:14px;gap:4px}
+.dsn-actions{gap:6px}
+.dsn-btn{padding:0 12px;font-size:14px;height:40px}
+.dsn-mega{left:20px;right:20px;grid-template-columns:repeat(3,minmax(0,1fr)) minmax(220px,1.1fr)}
+}
+
+/* 900–1060 px: aún más compacto */
+@media (min-width:900px) and (max-width:1060px){
+.dsn-bar{gap:10px;padding:0 16px}
+.dsn .wordmark-logo{width:138px}
+.dsn-drawer{gap:8px}
+.dsn-list{gap:0}
+.dsn-trigger,.dsn-link{padding:0 7px;font-size:13.5px;gap:2px}
+.dsn-chev{width:12px;height:12px}
+.dsn-btn{padding:0 10px;font-size:13.5px}
+.dsn-lang{min-width:38px;padding:0 8px}
+}
+/* Móvil (< 900 px): botón ☰ y panel a pantalla completa con acordeones */
+@media (max-width:899.98px){
+.dsn{--dsn-h:64px}
+.dsn-bar{gap:8px;padding:0 16px}
+.dsn .wordmark-logo{width:min(200px,52vw)}
+.dsn-logo{margin-right:auto}
+.dsn-burger{display:grid;order:3}
+.dsn-lang{order:2;height:44px}
+.dsn-drawer{display:none;position:fixed;top:var(--dsn-h);left:0;right:0;bottom:0;flex-direction:column;align-items:stretch;gap:20px;padding:8px 16px calc(28px + env(safe-area-inset-bottom));background:var(--dsn-bg);overflow-y:auto;overscroll-behavior:contain;border-top:1px solid #ffffff12}
+.dsn.is-open .dsn-drawer{display:flex}
+.dsn-nav{flex:none}
+.dsn-list{flex-direction:column;align-items:stretch;gap:0}
+.dsn-list>.dsn-item{border-bottom:1px solid #18262f}
+.dsn-trigger,.dsn-link{width:100%;height:58px;justify-content:space-between;padding:0 4px;border-radius:0;font-size:19px;font-weight:600;background:none!important}
+.dsn-chev{width:18px;height:18px}
+.dsn-panel{position:static;width:auto;max-width:none;margin:0;padding:0 0 14px;border:0;border-radius:0;background:none;box-shadow:none;animation:none!important}
+.dsn-panel:before{display:none}
+.dsn-mega{display:block}
+.dsn-preview{display:none}
+.dsn-col+.dsn-col{margin-top:10px}
+.dsn-col-title{margin:6px 4px 6px}
+.dsn-mlink{padding:8px 4px}
+.dsn-pop .dsn-mdesc{display:none}
+.dsn-actions{flex-direction:column;align-items:stretch;gap:10px;margin:0}
+.dsn-signin{display:flex;flex-direction:column}
+.dsn-btn{width:100%;height:52px;font-size:17px}
+.dsn-signin .dsn-pop{width:auto;padding:8px 0 0}
+}
+html.dsn-lock,html.dsn-lock body{overflow:hidden}
+@media (prefers-reduced-motion:reduce){.dsn *{transition:none!important;animation:none!important}}
+/* Captura limpia de las maquetas de /demo/?capture */
+body.capture .dsn{display:none}
+
+/* ── Fondo puntillado que se ilumina (todas las páginas) ──────────────────────────
+   Capa fija detrás del contenido (z-index:-1, sin eventos de puntero), creada por /assets/app.js.
+   · base: rejilla de puntos sutil, estática.
+   · reposo: puntos cian enmascarados en dos zonas que «respiran» despacio (solo opacidad).
+   · halo: un cuadrado de --d px con puntos cian y una bruma suave, enmascarado en círculo, que sigue al
+     ratón con transform; su background-position compensa el desplazamiento para que sus puntos caigan
+     exactamente sobre los de la base. app.js solo escribe --x/--y dentro de un requestAnimationFrame
+     cuando el ratón se mueve; en táctil y con movimiento reducido el halo se queda fijo. */
+.dsn-dots{--gap:24px;--x:78vw;--y:20vh;--d:560px;position:fixed;inset:0;z-index:-1;pointer-events:none;overflow:hidden;contain:strict}
+.dsn-dots>i{position:absolute;display:block}
+.dsn-dots-base,.dsn-dots-idle{inset:0;background-size:var(--gap) var(--gap)}
+.dsn-dots-base{background-image:radial-gradient(circle at 50% 50%,#a9c3d12e 0,#a9c3d12e 1px,transparent 1.5px)}
+.dsn-dots-idle{background-image:radial-gradient(circle at 50% 50%,#26deec 0,#26deec 1px,transparent 1.6px);opacity:.22;
+  -webkit-mask:radial-gradient(ellipse 46% 40% at 88% 8%,#000,transparent 70%),radial-gradient(ellipse 40% 36% at 6% 96%,#000a,transparent 70%);
+          mask:radial-gradient(ellipse 46% 40% at 88% 8%,#000,transparent 70%),radial-gradient(ellipse 40% 36% at 6% 96%,#000a,transparent 70%)}
+.dsn-dots-halo{left:0;top:0;width:var(--d);height:var(--d);will-change:transform;
+  transform:translate3d(calc(var(--x) - var(--d) / 2),calc(var(--y) - var(--d) / 2),0);
+  background-image:radial-gradient(circle at 50% 50%,#26deec 0,#26deec 1.2px,transparent 1.8px);background-size:var(--gap) var(--gap);
+  background-position:calc(var(--d) / 2 - var(--x)) calc(var(--d) / 2 - var(--y));
+  -webkit-mask:radial-gradient(closest-side,#000 0,#000c 30%,#0005 62%,transparent 100%);
+          mask:radial-gradient(closest-side,#000 0,#000c 30%,#0005 62%,transparent 100%);
+  opacity:.85;transition:opacity .5s}
+.dsn-dots-halo:before{content:'';position:absolute;inset:0;background:radial-gradient(closest-side,#26deec1a,transparent)}
+@media (hover:none),(pointer:coarse){.dsn-dots{--x:82vw;--y:16vh;--d:440px}.dsn-dots-halo{opacity:.6}}
+@media (prefers-reduced-motion:no-preference){.dsn-dots-idle{animation:dsn-breathe 9s ease-in-out infinite alternate}}
+@keyframes dsn-breathe{from{opacity:.1}to{opacity:.34}}
+@media (prefers-reduced-motion:reduce){.dsn-dots-halo{opacity:.5;transition:none}}
+body.capture .dsn-dots{display:none}
