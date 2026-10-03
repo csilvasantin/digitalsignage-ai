@@ -340,6 +340,7 @@ footer a:hover{color:var(--text)}
 .stamp{font-family:var(--mono);font-size:11.5px;color:var(--dim);margin-left:auto}
 [data-brand-operator][hidden]{display:none}
 </style>
+<link rel="stylesheet" href="/assets/panel-resize.css">
 </head>
 <body>
 <a class="skip" href="#main-content">Skip to main content</a>
@@ -349,7 +350,7 @@ footer a:hover{color:var(--text)}
   <div class="wrap bar">
     <button class="frame-btn frame-btn-left" type="button" data-panel="options" aria-controls="panel-options" aria-expanded="false"><span aria-hidden="true">☰</span> Options</button>
     <a class="logo" href="/">
-      <img class="brand-symbol" data-brand-mark src="/assets/brand-mark.svg" width="150" height="150" alt="">
+      <span class="yk-wordmark" aria-label="ADmiraNeXT"><span class="yk-wm-admira">ADmira</span><span class="yk-wm-next"><span class="yk-wm-n">N</span><span class="yk-wm-e">e</span><span class="yk-wm-x">X</span><span class="yk-wm-t">T</span></span></span>
       <span data-brand-wordmark>digitalsignage<em>.ai</em></span>
     </a>
     <nav class="main-nav" aria-label="Primary navigation">
@@ -360,8 +361,8 @@ footer a:hover{color:var(--text)}
       <a class="nav-cta" href="/pilot/">Start a pilot</a>
     </nav>
     <div class="frame-right">
-      <button class="frame-btn" type="button" data-panel="advanced" aria-controls="panel-advanced" aria-expanded="false">Advanced</button>
-      <button class="frame-btn" type="button" data-panel="expert" aria-controls="panel-expert" aria-expanded="false">Expert</button>
+      <button class="frame-btn" type="button" data-panel="advanced" aria-controls="panel-advanced" aria-expanded="false"><span aria-hidden="true">▤</span> Advanced</button>
+      <button class="frame-btn" type="button" data-panel="expert" aria-controls="panel-expert" aria-expanded="false"><span aria-hidden="true">⌘</span> Expert</button>
     </div>
   </div>
 </header>
@@ -1108,5 +1109,6 @@ footer a:hover{color:var(--text)}
 </script>
 <script src="/assets/locale.js"></script>
 <script src="/assets/your-brand.js"></script>
+<script src="/assets/panel-resize.js"></script>
 </body>
 </html>
