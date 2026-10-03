@@ -64,6 +64,7 @@ html{scroll-padding-top:calc(var(--mx-bar) + var(--mx-strip) + 16px)}
 .mx-mirror{text-transform:none;letter-spacing:0;font-size:13px;color:var(--mx-muted)}
 .mx-h1{font-family:var(--mx-display);font-weight:400;font-size:clamp(44px,5.6vw,84px);line-height:1;letter-spacing:-.02em;margin:0 0 26px;max-width:none}
 .mx-h1 em{font-style:italic;color:var(--acc)}
+.mx-claim{display:inline-block;margin:-6px 0 24px;padding:8px 14px 8px 16px;border-left:3px solid var(--acc);background:color-mix(in srgb,var(--acc) 9%,transparent);border-radius:0 var(--mx-r-sm) var(--mx-r-sm) 0;font:600 clamp(18px,1.75vw,25px)/1.25 var(--mx-head);letter-spacing:-.02em;color:#fff}
 .mx-lead{font-size:19px;line-height:1.6;color:var(--mx-soft);max-width:560px;margin:0 0 32px}
 .mx-ctas{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:30px}
 .mx-btn{display:inline-flex;align-items:center;gap:8px;min-height:50px;padding:0 22px;border-radius:10px;font:700 16px/1 var(--mx-body);border:1px solid transparent;transition:transform .18s,background .18s,border-color .18s}

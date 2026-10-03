@@ -12,12 +12,12 @@
 (()=>{
 const bar=document.querySelector('[data-site-header] .dsn-bar');if(!bar)return;
 const H=document.documentElement,B=document.body,here=B.dataset.sol||'';
-const SOL=[
- {id:'studio',n:'01',c:'#FF33CC',v:['Crear','Create'],w:['https://www.admira.studio/','https://pixeria.com/'],m:'pixeria.com'},
- {id:'store', n:'02',c:'#FFCC00',v:['Operar','Operate'],w:['https://www.admira.store/','https://xpaceos.com/'],m:'xpaceos.com'},
- {id:'tv',    n:'03',c:'#33FF99',v:['Emitir','Broadcast'],w:['https://admira.tv/','https://admira.tv/'],m:''},
- {id:'app',   n:'04',c:'#FFFFFF',v:['Monetizar','Monetize'],w:['https://www.admira.app/','https://clearchannel.tv/'],m:'clearchannel.tv'},
- {id:'biz',   n:'05',c:'#FF3366',v:['Cuidar','Care'],w:['https://www.admira.biz/','https://yokup.com/'],m:'yokup.com'}];
+const SOL=[ /* orden y verbos de Carlos; e = etiqueta de la web en español (app y biz viven hoy en admira.biz y admira.app, como en la portada) */
+ {id:'studio',n:'01',c:'#FF33CC',v:['Crear','Create'],w:['https://www.admira.studio/','https://pixeria.com/'],m:'pixeria.com',e:'admira.studio'},
+ {id:'store', n:'02',c:'#FFCC00',v:['Distribuir','Distribute'],w:['https://www.admira.store/','https://xpaceos.com/'],m:'xpaceos.com',e:'admira.store'},
+ {id:'tv',    n:'03',c:'#33FF99',v:['Reproducir','Play'],w:['https://admira.tv/','https://admira.tv/'],m:'',e:'admira.tv'},
+ {id:'app',   n:'04',c:'#FFFFFF',v:['Coordinar','Coordinate'],w:['https://www.admira.biz/','https://yokup.com/'],m:'yokup.com',e:'admira.biz'},
+ {id:'biz',   n:'05',c:'#FF3366',v:['Monetizar','Monetize'],w:['https://www.admira.app/','https://clearchannel.tv/'],m:'clearchannel.tv',e:'admira.app'}];
 const DEMO=['https://www.admira.app/','https://clearchannel.tv/'];
 const en=()=>H.lang==='en',X=()=>en()?1:0;
 const esc=s=>String(s).replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;');
@@ -32,7 +32,7 @@ bar.insertAdjacentHTML('beforeend',tog('right','▤','Avanzado','Advanced')+tog(
 
 /* ── contenido de los paneles ── */
 const solNav=SOL.map(s=>`<li><a href="/${s.id}/" style="--c:${s.c}"${s.id===here?' aria-current="page"':''}><i></i>admira.${s.id}<small>${L(s.v[0],s.v[1])}</small></a></li>`).join('');
-const webNav=SOL.map(s=>`<li><a href="${s.w[0]}" data-href-es="${s.w[0]}" data-href-en="${s.w[1]}" style="--c:${s.c}" rel="noopener"><i></i>${s.m?L('admira.'+s.id,s.m):'admira.'+s.id}<small>↗</small></a></li>`).join('');
+const webNav=SOL.map(s=>`<li><a href="${s.w[0]}" data-href-es="${s.w[0]}" data-href-en="${s.w[1]}" style="--c:${s.c}" rel="noopener"><i></i>${s.m?L(s.e,s.m):s.e}<small>↗</small></a></li>`).join('');
 const LEFT=`<div class="mx-blk"><p class="mx-blk-t">${L('Soluciones','Solutions')}</p><ul class="mx-nav">${solNav}</ul></div>
 <div class="mx-blk"><p class="mx-blk-t">${L('Webs de producto','Product sites')}</p><ul class="mx-nav">${webNav}</ul></div>
 <div class="mx-blk"><p class="mx-blk-t">digitalsignage.ai</p><ul class="mx-nav"><li><a href="/">${L('Inicio','Home')}</a></li><li><a href="/pricing/">${L('Precios','Pricing')}</a></li><li><a href="/demo/">${L('Demo marca blanca','White-label demo')}</a></li></ul></div>
