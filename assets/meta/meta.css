@@ -137,7 +137,8 @@ html{scroll-padding-top:calc(var(--mx-bar) + var(--mx-strip) + 16px)}
 .mx-link small{display:block;font:600 11px/1 var(--mx-body);letter-spacing:.15em;color:var(--mx-muted);margin-bottom:12px}
 .mx-link strong{display:block;font:600 19px/1.1 var(--mx-head);letter-spacing:-.03em}
 .mx-link strong b{color:var(--c);font-weight:600}
-.mx-link>span{display:block;margin-top:8px;font-size:14px;color:var(--mx-muted);line-height:1.45}
+.mx-link>span{display:block;margin-top:10px;font:500 15px/1.4 var(--mx-head);letter-spacing:-.01em;color:#f0f7fa}
+.mx-link[aria-current=page]>span{color:var(--c)}
 .mx-link[aria-current=page]{border-color:var(--c);background:linear-gradient(160deg,color-mix(in srgb,var(--c) 14%,#08121b),#08121b)}
 .mx-link[aria-current=page]:after{content:attr(data-here);position:absolute;top:14px;right:14px;font:700 9px/1 var(--mx-body);letter-spacing:.14em;color:var(--c)}
 .mx-cta{position:relative;margin:0 0 88px;padding:56px 48px;border-radius:var(--mx-r-lg);overflow:hidden;border:1px solid #ffffff24;background:radial-gradient(55% 90% at 0% 0%,#ff336626,transparent 62%),radial-gradient(45% 80% at 32% 100%,#ffcc001c,transparent 62%),radial-gradient(50% 90% at 66% 0%,#33ff9922,transparent 62%),radial-gradient(50% 95% at 100% 100%,#ff33cc2e,transparent 62%),linear-gradient(135deg,#0b0f16,#060c12)}
