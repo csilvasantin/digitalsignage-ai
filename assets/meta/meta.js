@@ -132,6 +132,8 @@ new MutationObserver(lang).observe(H,{attributes:true,attributeFilter:['lang']})
 if(video){const calm=matchMedia('(prefers-reduced-motion:reduce)');if(calm.matches){video.removeAttribute('autoplay');video.pause();}
  if('IntersectionObserver' in window)new IntersectionObserver(([e])=>{if(calm.matches||video.dataset.user==='paused')return;if(e.isIntersecting)video.play().catch(()=>{});else video.pause();}).observe(video);}
 
+/* ── tira de soluciones: la actual a la vista en móvil ── */
+const cs=document.querySelector('.mx-strip a[aria-current]');if(cs){const w=cs.parentElement;if(w.scrollWidth>w.clientWidth)w.scrollLeft=Math.max(0,cs.offsetLeft-w.offsetLeft-(w.clientWidth-cs.offsetWidth)/2);}
 /* ── captura ampliable ── */
 const dlg=document.querySelector('.mx-shot-dialog');if(dlg){document.querySelectorAll('[data-mx-zoom]').forEach(b=>b.addEventListener('click',()=>dlg.showModal()));dlg.querySelector('[data-mx-x]')?.addEventListener('click',()=>dlg.close());dlg.addEventListener('click',e=>{if(e.target===dlg)dlg.close();});}
 })();
