@@ -8,11 +8,13 @@
   <link rel="canonical" href="https://www.digitalsignage.ai/pilot/">
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/assets/pilot.css">
+  <link rel="stylesheet" href="/assets/panel-resize.css">
   <script src="/brand.js"></script>
+  <style>.hp{position:absolute!important;left:-9999px!important;width:1px;height:1px;overflow:hidden}.consent{display:flex!important;gap:10px;align-items:flex-start;font-size:13px;line-height:1.5}.consent input{width:auto;margin-top:3px;flex:none}.pilot-status{min-height:1.5em;margin:12px 0 0;font-size:13px;line-height:1.5}.pilot-status[data-kind="ok"]{color:#b9ff66}.pilot-status[data-kind="warn"]{color:#ff5c35}.pilot-status a{color:inherit}form[data-sent="true"] button[type="submit"]{opacity:.5}</style>
 </head>
 <body>
   <a class="skip" href="#pilot-title">Skip to the pilot brief</a>
-  <header class="bar"><a class="logo" data-brand-wordmark href="/">digitalsignage<em>.ai</em></a><a class="back" href="/atlas/">Review field patterns →</a></header>
+  <header class="bar"><a class="logo" href="/"><span class="yk-wordmark" aria-label="ADmiraNeXT"><span class="yk-wm-admira">ADmira</span><span class="yk-wm-next"><span class="yk-wm-n">N</span><span class="yk-wm-e">e</span><span class="yk-wm-x">X</span><span class="yk-wm-t">T</span></span></span> <span data-brand-wordmark>digitalsignage<em>.ai</em></span></a><a class="back" href="/atlas/">Review field patterns →</a></header>
   <main class="wrap">
     <section class="intro">
       <p class="folio">Pilot desk · one useful page</p>
@@ -26,19 +28,22 @@
         <fieldset><legend>04 · What already exists?</legend><div class="choices"><label><input type="checkbox" name="existing" value="screens"> Screens</label><label><input type="checkbox" name="existing" value="content"> Content</label><label><input type="checkbox" name="existing" value="network"> Network</label><label><input type="checkbox" name="existing" value="sensors"> Sensors</label><label><input type="checkbox" name="existing" value="nothing-confirmed"> Nothing confirmed</label></div></fieldset>
         <label><span>05 · What constraint matters first?</span><select name="constraint" required><option value="">Choose one</option><option>Installation access</option><option>Content approval</option><option>Privacy and data handling</option><option>Offline operation</option><option>Existing hardware</option><option>Not known yet</option></select></label>
         <label><span>Reply address</span><input type="email" name="reply" required autocomplete="email" placeholder="you@company.com"></label>
+        <label class="hp" aria-hidden="true"><span>Leave this field empty</span><input name="website" tabindex="-1" autocomplete="off"></label>
+        <label class="consent"><input type="checkbox" id="pilot-consent" name="consent" required> <span id="pilot-consent-text">Keep this brief and my reply address so a person at Admira can answer me about a pilot. Nothing else is done with them, and I can ask for them to be deleted at any time.</span></label>
       </div>
       <aside class="dispatch">
         <p class="dispatch-no">Pilot brief / draft</p>
         <h2>A brief you can read before sending.</h2>
         <pre id="brief-preview" aria-live="polite">Complete the five questions. Your brief will appear here.</pre>
-        <button type="submit">Open this brief in email →</button>
-        <p class="fallback"><b>No account. No silent upload.</b> The button opens your email app with the brief filled in. With JavaScript unavailable, this form still uses your email app and sends the same named fields.</p>
+        <button type="submit">Send this brief →</button>
+        <p class="pilot-status" id="pilot-status" role="status" aria-live="polite"></p>
+        <p class="fallback"><b>No account. Nothing sent until you press the button.</b> Your brief and reply address are then saved as a pilot enquiry, exactly as shown above. With JavaScript unavailable, this form opens your email app with the same named fields instead.</p>
         <noscript><p class="noscript">JavaScript is off. That is fine: complete the form and your email app will receive the plain-text answers.</p></noscript>
       </aside>
     </form>
-    <section class="after"><p>What happens next</p><ol><li><b>We read the context.</b><span>We separate known facts from open decisions.</span></li><li><b>We suggest one testable slice.</b><span>A pilot should answer a question, not imitate a finished rollout.</span></li><li><b>You decide whether to continue.</b><span>No countdown, invented scarcity or automatic follow-up.</span></li></ol></section>
+    <section class="after"><p>What happens next</p><ol><li><b>We read the context.</b><span>We separate known facts from open decisions.</span></li><li><b>We suggest one testable slice.</b><span>A pilot should answer a question, not imitate a finished rollout.</span></li><li><b>You decide whether to continue.</b><span>The desk gets one notice so a person can reply. There is no countdown and no drip sequence. Ask and the enquiry is deleted.</span></li></ol></section>
   </main>
-  <footer><div class="wrap">Pilot desk v1 · five questions · email handoff · no stored form data</div></footer>
-  <script src="/assets/pilot.js"></script>
+  <footer><div class="wrap">Pilot desk · five questions · stored as a sales lead on this preview · the desk is notified once</div></footer>
+  <script src="/assets/pilot-lead.js"></script>
 </body>
 </html>

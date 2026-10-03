@@ -1,0 +1,68 @@
+/* Paneles redimensionables y logotipo oficial ADmiraNeXT.
+   Carlos, 2-oct-2026: opciones, avanzado y experto se arrastran.
+   La marca es ADmira en blanco y N #FF3366, e #FFCC00, X #33FF99, T #FF33CC. */
+.panel-left { width: var(--ds-w-left, min(340px, 88vw)); }
+.panel-right { width: var(--ds-w-right, min(380px, 90vw)); }
+.panel-bottom { height: var(--ds-h-bottom, min(42vh, 420px)); max-height: none; }
+
+.logo .yk-wordmark {
+  font-family: Montserrat, "Helvetica Neue", system-ui, -apple-system, sans-serif;
+  font-weight: 800;
+  font-size: 17px;
+  letter-spacing: 0;
+  line-height: 1;
+  color: #fff;
+  display: inline-flex;
+  align-items: baseline;
+  text-transform: none;
+}
+.yk-wm-admira { color: #fff; }
+.yk-wm-next { display: inline-flex; }
+.yk-wm-n { color: #FF3366; }
+.yk-wm-e { color: #FFCC00; }
+.yk-wm-x { color: #33FF99; }
+.yk-wm-t { color: #FF33CC; }
+
+.ds-resize {
+  position: fixed;
+  z-index: 40;
+  display: none;
+  touch-action: none;
+  background: transparent;
+}
+html.ds-open-left .ds-resize-left,
+html.ds-open-right .ds-resize-right,
+html.ds-open-bottom .ds-resize-bottom { display: block; }
+.ds-resize-left, .ds-resize-right { top: 62px; bottom: 0; width: 10px; cursor: col-resize; }
+.ds-resize-left { left: calc(var(--ds-w-left, min(340px, 88vw)) - 5px); }
+.ds-resize-right { right: calc(var(--ds-w-right, min(380px, 90vw)) - 5px); }
+.ds-resize-bottom {
+  left: 0;
+  right: 0;
+  height: 10px;
+  cursor: row-resize;
+  bottom: calc(var(--ds-h-bottom, min(42vh, 420px)) - 5px);
+}
+.ds-resize::after {
+  content: "";
+  position: absolute;
+  background: rgba(243, 240, 232, .45);
+  border-radius: 3px;
+}
+.ds-resize-left::after, .ds-resize-right::after {
+  top: 50%;
+  left: 3px;
+  width: 4px;
+  height: 44px;
+  transform: translateY(-50%);
+}
+.ds-resize-bottom::after {
+  left: 50%;
+  top: 3px;
+  width: 44px;
+  height: 4px;
+  transform: translateX(-50%);
+}
+.ds-resize:hover::after, .ds-resize:focus-visible::after, html.ds-resizing .ds-resize::after { background: #FF3366; }
+.ds-resize:focus-visible { outline: 2px solid #FF3366; outline-offset: 1px; }
+html.ds-resizing, html.ds-resizing * { user-select: none !important; }
