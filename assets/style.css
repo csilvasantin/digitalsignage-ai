@@ -57,3 +57,22 @@ body[data-page=home] .hero{min-height:500px}body[data-page=home] .hero-content{p
 
 /* La marca se escribe siempre AdmiraNeXT, también dentro de rótulos en mayúsculas (Carlos, 3-oct-2026). */
 .nx{text-transform:none}
+
+/* ═══ Colores de los cinco pilares = colores del logo AdmiraNeXT (Carlos, 3-oct-2026) ═══
+   Studio N #FF3366 · TV e #FFCC00 · Store X #33FF99 · App T #FF33CC · Biz cian #26DEEC.
+   Mismo reparto que el catálogo de admira.tv. */
+.pillar[href="/studio/"],body[data-page="studio"]{--pilar:#FF3366}
+.pillar[href="https://admira.tv/"]{--pilar:#FFCC00}
+.pillar[href="/store/"],body[data-page="store"]{--pilar:#33FF99}
+.pillar[href="/app/"],body[data-page="app"]{--pilar:#FF33CC}
+.pillar[href="/biz/"],body[data-page="biz"]{--pilar:#26DEEC}
+.pillar{border-top:3px solid var(--pilar,var(--line))}
+.pillar:hover{border-color:var(--pilar,var(--cyan))}
+.pillar .number,.pillar h3 span,.pillar .symbol{color:var(--pilar,var(--cyan))}
+.pillar .pill:not(.pill--blue){color:var(--pilar,var(--cyan));border-color:color-mix(in srgb,var(--pilar,#26deec) 35%,transparent)}
+body[data-page] .product-copy .eyebrow,body[data-page] .product-domain span{color:var(--pilar,var(--cyan))}
+.dsn-col:first-child .dsn-mlink[href="/studio/"] .dsn-ico{color:#FF3366}
+.dsn-col:first-child .dsn-mlink[href="https://admira.tv/"] .dsn-ico{color:#FFCC00}
+.dsn-col:first-child .dsn-mlink[href="/store/"] .dsn-ico{color:#33FF99}
+.dsn-col:first-child .dsn-mlink[href="/app/"] .dsn-ico{color:#FF33CC}
+.dsn-col:first-child .dsn-mlink[href="/biz/"] .dsn-ico{color:#26DEEC}
