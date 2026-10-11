@@ -176,7 +176,7 @@ const biz=solution('biz','05','MONETIZAR','MONETIZE','Convierte tu circuito en r
 const page=document.body.dataset.page||'home';
 const content=document.getElementById('detail-content');
 if(content)content.innerHTML=({studio,store,app,biz})[page]||'';
-const titles={home:['AdmiraNeXT — Cinco soluciones. Un mundo conectado.','AdmiraNeXT — Five pillars. One connected world.'],studio:['Admira Studio — Contenido con IA','Admira Studio — AI content creation'],store:['Admira Store — Control del espacio','Admira Store — Connected space control'],app:['Admira App — Personas y agentes','Admira App — People and agents'],biz:['Admira Biz — Retail media','Admira Biz — Retail media'],pricing:['Precios — digitalsignage.ai · AdmiraNeXT','Pricing — digitalsignage.ai · AdmiraNeXT']};
+const titles={home:['AdmiraNeXT — Todas las pantallas de tus tiendas, en una sola red viva','AdmiraNeXT — Every screen in your stores, run as one living network'],studio:['Admira Studio — Contenido con IA','Admira Studio — AI content creation'],store:['Admira Store — Control del espacio','Admira Store — Connected space control'],app:['Admira App — Personas y agentes','Admira App — People and agents'],biz:['Admira Biz — Retail media','Admira Biz — Retail media'],pricing:['Precios — digitalsignage.ai · AdmiraNeXT','Pricing — digitalsignage.ai · AdmiraNeXT']};
 function updatePageTitle(){if(titles[page])document.title=titles[page][lang==='es'?0:1];}
 language.addEventListener('click',updatePageTitle);
 translate();updatePageTitle();
