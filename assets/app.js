@@ -5,6 +5,8 @@
    en los HTML: tests/cabecera.test.mjs comprueba que el marcador es idéntico. */
 (()=>{
 const bar=document.querySelector('[data-site-header] .dsn-bar');if(!bar)return;
+const dsnFiltro=(window.dsnReglas&&window.dsnReglas.desdeBusqueda(location.search))||null;
+window.dsnPilares=dsnFiltro;
 const header=bar.parentElement;
 let first='en';try{first=sessionStorage.getItem('admira-language')||'en'}catch{}
 const esc=s=>String(s).replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;');
@@ -74,8 +76,9 @@ const SIGNIN={id:'signin',title:['Entrar en…','Sign in to…'],items:[
  {i:'studio',l:['admira.studio','admira.studio'],h:'https://www.admira.studio/',d:['Contenido','Content']},
  {i:'store',l:['admira.store','admira.store'],h:'https://www.admira.store/',d:['Xpacios · sistema operativo','Xpaces · operating system']},
  {i:'tv',l:['admira.tv','admira.tv'],h:'https://admira.tv/',d:['Canal y player','Channel and player']},
- {i:'app',l:['admira.app','admira.app'],h:'https://www.admira.biz/retailer#access',d:['Coordinación · en admira.biz','Coordination · on admira.biz']},
- {i:'biz',l:['admira.biz','admira.biz'],h:'https://www.admira.app/backoffice',d:['Retail media · en admira.app','Retail media · on admira.app']}]};
+ {i:'app',l:['admira.app','admira.app'],h:'https://www.admira.app/retailer#access',d:['Coordinación · en admira.app','Coordination · on admira.app']},
+ {i:'biz',l:['admira.biz','admira.biz'],h:'https://www.admira.biz/backoffice',d:['Retail media · en admira.biz','Retail media · on admira.biz']}]};
+if(dsnFiltro&&window.dsnReglas)window.dsnReglas.aplicarMenu({PRODUCT,RESOURCES,SIGNIN},dsnFiltro);
 const ITEMS=[];
 const isExt=h=>/^https?:/.test(h);
 const link=(it,desc)=>{const k=ITEMS.push(it)-1;return `<li><a class="dsn-mlink" href="${it.h}" data-k="${k}"><span class="dsn-ico">${ico(it.i)}</span><span class="dsn-mtext"><span class="dsn-mlabel">${L(...it.l)}${isExt(it.h)?'<span class="dsn-ext" aria-hidden="true">↗</span>':''}</span><span class="${desc?'dsn-mdesc':'dsn-sr'}">${L(...it.d)}</span></span></a></li>`;};

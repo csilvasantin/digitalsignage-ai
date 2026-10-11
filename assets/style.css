@@ -76,3 +76,42 @@ body[data-page] .product-copy .eyebrow,body[data-page] .product-domain span{colo
 .dsn-col:first-child .dsn-mlink[href="/store/"] .dsn-ico{color:#33FF99}
 .dsn-col:first-child .dsn-mlink[href="/app/"] .dsn-ico{color:#FF33CC}
 .dsn-col:first-child .dsn-mlink[href="/biz/"] .dsn-ico{color:#26DEEC}
+
+/* v8 (4-oct-2026): rótulos del vídeo de la portada como texto HTML, sincronizados con el vídeo (home.js).
+   --below: debajo de la nube, misma tipografía que el titular (Instrument Serif), sobre el fondo claro; sigue al borde
+   inferior de la nube (--cap-y) y se desvanece con el titular al hacer scroll. --in: dentro de la tarjeta (modo
+   tarjeta/pantalla completa), sobre el vídeo, arriba a la izquierda para no chocar con la caja amarilla. */
+.ch-cap{pointer-events:none;font-family:'Instrument Serif',Georgia,'Times New Roman',serif;font-weight:400}
+.ch-cap p{margin:0}
+.ch-cap-txt{transition:opacity .35s ease,transform .35s ease}
+.ch-cap.is-swap .ch-cap-txt,.ch-cap.is-empty .ch-cap-txt{opacity:0;transform:translateY(6px)}
+.ch-cap-name{font-size:clamp(30px,2.9vw,44px);line-height:1.02;letter-spacing:-.015em;white-space:nowrap}
+.ch-cap-claim{margin-top:6px!important;font-size:clamp(19px,1.6vw,25px);line-height:1.15;letter-spacing:-.005em}
+.ch-cap--below{position:absolute;z-index:3;left:16px;right:16px;top:0;transform:translateY(var(--cap-y,70vh));text-align:center;color:var(--ink-light);opacity:calc(1 - var(--out))}
+.ch-cap--below .ch-cap-claim{color:#33434e}
+/* sufijo de cada solución: texto en tinta con subrayado tipo rotulador en su color AdmiraNeXT (legible también el amarillo y el verde) */
+/* v8.1: la línea de color va debajo del claim (no detrás del sufijo). --bar lo escribe home.js en cada rótulo
+   (color de la solución; en el final, las cuatro del logo NeXT). En fondo claro, app (blanco) lleva un filete de tinta. */
+.ch-cap-claim{display:table}
+.ch-cap-claim:after{content:'';display:block;height:6px;margin-top:10px;border-radius:3px;background:var(--bar,transparent);transition:background-color .35s ease}
+.ch-cap--below .ch-cap-claim{margin-left:auto;margin-right:auto}
+.ch-cap--below[data-k=app] .ch-cap-claim:after{box-shadow:inset 0 0 0 1px #0b1a24}
+.ch-cap.is-empty .ch-cap-claim:after{background:transparent}
+/* v8.1: los puntos que se iluminan con el ratón toman el color de la solución del vídeo (--glow, lo escribe home.js);
+   --glow-l es la variante para el fondo claro del héroe (app: gris, porque el blanco no se ve). */
+@property --glow{syntax:'<color>';inherits:true;initial-value:#FF33CC}
+@property --glow-l{syntax:'<color>';inherits:true;initial-value:#FF33CC}
+body[data-page=home]{--glow:#FF33CC;--glow-l:#FF33CC;transition:--glow .6s ease,--glow-l .6s ease}
+body[data-page=home] .dsn-dots-idle{background-image:radial-gradient(circle at 50% 50%,var(--glow) 0,var(--glow) 1px,transparent 1.6px)}
+body[data-page=home] .dsn-dots-halo{background-image:radial-gradient(circle at 50% 50%,var(--glow) 0,var(--glow) 1.2px,transparent 1.8px)}
+body[data-page=home] .dsn-dots--local .dsn-dots-halo{--g:color-mix(in srgb,var(--glow) calc(var(--dark,0) * 100%),var(--glow-l));background-image:radial-gradient(circle at 50% 50%,var(--g) 0,var(--g) 1.4px,transparent 2px)}
+body[data-page=home] .dsn-dots-halo:before{background:radial-gradient(closest-side,color-mix(in srgb,var(--glow) 12%,transparent),transparent)}
+body[data-page=home] .dsn-dots--local .dsn-dots-halo:before{background:radial-gradient(closest-side,color-mix(in srgb,var(--g) 12%,transparent),transparent)}
+.ch-cap--in{position:absolute;z-index:2;left:0;right:0;top:0;padding:clamp(18px,2.6vw,34px) clamp(18px,2.8vw,40px) 70px;color:#fff;background:linear-gradient(180deg,#05080cb3,#05080c55 55%,transparent);opacity:var(--box);text-shadow:0 1px 14px #0009}
+.ch-cap--in .ch-cap-claim{color:#e8eef2}
+.ch-cap--in .suf{color:var(--c)}
+.ch-cap--in.is-empty{background:none}
+.ch-cap .nxc{color:var(--c)}
+.ch-cap--below .nxc{color:inherit}
+.ch--static .ch-cap--below{display:none}
+@media(max-width:899.98px){.ch-cap-claim:after{height:5px;margin-top:8px}.ch-cap-name{font-size:clamp(28px,8vw,36px)}.ch-cap-claim{font-size:clamp(17px,4.6vw,21px)}.ch-cap--in{padding:16px 18px 56px}.ch-cap--in .ch-cap-name{font-size:28px}.ch-cap--in .ch-cap-claim{font-size:17px}}
